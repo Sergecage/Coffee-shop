@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+:root {
+  --main-font-color: #403F3D;
+  --light-font-color: #E1D4C9;
+  --accent-font-color: #B0907A;
+  --backdrop-color: rgba(64, 63, 61, 0.80);
+  --background-color: #E1D4C9;
+  --border-color: #665F55;
+}
+
+body {
+  background: var(--background-color);
+  font-family: "inter", sans-serif;
+  color: var(--main-font-color);
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+  color: var(--light-font-color);
+}
+
+.sub-heading {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+  margin-top: 100px;
+}
+
+.h3-heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.btn-primary, a {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--main-font-color);
+}
+a:hover {
+  color: var(--accent-font-color);
+  cursor: pointer;
+}
+
+.accent {
+  color: var(--accent-font-color);
+  font-style: italic;
+}
+
+.body-container {
+  width: 1440px;
+  margin: auto;
+}
+
+header .logo-container {
+  margin: 1.2em 0 0 2.42em;
+}
+header .logo-container img {
+  width: 100px;
+  height: 60px;
+}
+header .header-menu {
+  position: absolute;
+  left: 38%;
+  top: 1.2em;
+}
+header .header-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 40px;
+}
+header .menu-header {
+  position: relative;
+  left: 90%;
+  top: -4.2em;
+}
+header .menu-header img {
+  padding-left: 8px;
+}
+
+main .enjoy {
+  background: url(../img/pictures/img-hero.svg);
+  background-size: 100%;
+  margin: 0 2.2em 0 2.2em;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1360px;
+  padding: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+main .enjoy h1 {
+  position: relative;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  width: 530px;
+}
+main .enjoy .text {
+  color: var(--light-font-color);
+  width: 530px;
+  margin-top: 40px;
+}
+main .enjoy .btn-primary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  padding: 20px 78px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  background: var(--background-color);
+  border-radius: 100px;
+  border: none;
+  margin-top: 40px;
+}
+
+section .favorite-coffee {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1360px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+section .favorite-coffee .coffee-scroll {
+  margin-top: 40px;
+}
+section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .coffee-scroll .arrow-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+}
+section .favorite-coffee .coffee-scroll .drinks ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
