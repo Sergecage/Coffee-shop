@@ -1,0 +1,1 @@
+console.log("1.Checking validation of pages: +16\n.2The layout matches the design +42\n3.CSS Requirements +10\nInteractivity +32");

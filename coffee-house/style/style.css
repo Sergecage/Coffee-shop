@@ -1,0 +1,649 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+:root {
+  --main-font-color: #403F3D;
+  --light-font-color: #E1D4C9;
+  --accent-font-color: #B0907A;
+  --backdrop-color: rgba(64, 63, 61, 0.80);
+  --background-color: #E1D4C9;
+  --border-color: #665F55;
+  --border-light: #C1B6AD;
+}
+
+body {
+  background: var(--background-color);
+  font-family: "inter", sans-serif;
+  color: var(--main-font-color);
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+  color: var(--light-font-color);
+}
+
+.sub-heading {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.h3-heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  font-style: normal;
+}
+
+.btn-primary, a {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-primary:hover, .btn-apps:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--main-font-color);
+}
+a:hover {
+  color: var(--accent-font-color);
+  cursor: pointer;
+}
+
+.accent {
+  color: var(--accent-font-color);
+  font-style: italic;
+}
+
+.btn-primary, .btn-apps {
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body-container {
+  width: 1440px;
+  margin: auto;
+}
+
+header .logo-container {
+  margin: 1.2em 0 0 2.42em;
+}
+header .logo-container img {
+  width: 100px;
+  height: 60px;
+}
+header .header-menu {
+  position: absolute;
+  left: 35.5%;
+  top: 2.2em;
+}
+header .header-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 40px;
+}
+header .menu-header {
+  position: relative;
+  left: 92.3%;
+  top: -3.2em;
+}
+header .menu-header img {
+  padding-left: 8px;
+}
+header .menu-header:hover {
+  text-decoration: underline;
+}
+
+main {
+  position: relative;
+  top: -0.8em;
+}
+main .enjoy {
+  background: url(../img/pictures/img-hero.svg);
+  background-size: 100%;
+  margin: 0 2.2em 0 2.5em;
+  border-radius: 40px;
+  padding: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+main .enjoy h1 {
+  position: relative;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  width: 530px;
+}
+main .enjoy .text {
+  color: var(--light-font-color);
+  width: 530px;
+  margin-top: 40px;
+}
+main .enjoy .btn-primary {
+  padding: 20px 78px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: var(--background-color);
+  border: none;
+  margin-top: 40px;
+}
+main .enjoy .btn-primary:hover::after {
+  content: url(../img/icons/coffee-cup.svg);
+}
+
+section .favorite-coffee {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  max-width: 1360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 100px;
+  padding: 0px 40px;
+}
+section .favorite-coffee .sub-heading {
+  position: relative;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  text-align: center;
+  left: 0.7em;
+  top: -0.2em;
+}
+section .favorite-coffee .coffee-scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1360px;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  left: 2.3em;
+}
+section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .coffee-scroll .arrow-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  background-image: url(../img/icons/arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: -0.8em;
+}
+section .favorite-coffee .coffee-scroll .arrow-left:hover, section .favorite-coffee .coffee-scroll .arrow-right:hover {
+  cursor: pointer;
+  background-color: var(--border-color);
+}
+section .favorite-coffee .coffee-scroll .arrow-left {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+section .favorite-coffee .coffee-scroll .drinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1152px;
+  min-width: 480px;
+  max-width: 1162px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section .favorite-coffee .coffee-scroll .drinks ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3em;
+}
+section .favorite-coffee .coffee-scroll .drinks ul .drink-item:nth-child(n+2) {
+  display: none;
+}
+section .favorite-coffee .coffee-scroll .drinks ul .drink-item img {
+  width: 480px;
+  height: 480px;
+}
+section .favorite-coffee .coffee-scroll .drinks .coffee-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 480px;
+  text-align: center;
+  position: relative;
+  top: 0.5em;
+}
+section .favorite-coffee .coffee-scroll .drinks .coffee-text .h3-heading, section .favorite-coffee .coffee-scroll .drinks .coffee-text .text {
+  margin-bottom: 16px;
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn {
+  position: relative;
+  top: 1.9em;
+  left: 0.1em;
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 16px;
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background: var(--border-light);
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag.active {
+  background: var(--border-color);
+}
+section .about {
+  margin: 100px 2.2em 0 2.2em;
+}
+section .about .sub-heading {
+  position: relative;
+  top: 0.5em;
+}
+section .img-grid {
+  position: relative;
+  top: 4.3em;
+  display: -ms-grid;
+  display: grid;
+  gap: 40px;
+  -ms-grid-columns: 660px 40px 660px;
+  grid-template-columns: 660px 660px;
+  -ms-grid-rows: 330px 40px 220px 40px 160px 40px 220px 40px 330px;
+  grid-template-rows: 330px 220px 160px 220px 330px;
+}
+section .img-grid > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+section .img-grid > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+section .img-grid > *:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+section .img-grid > *:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+section .img-grid > *:nth-child(5) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+section .img-grid > *:nth-child(6) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+section .img-grid > *:nth-child(7) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+}
+section .img-grid > *:nth-child(8) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+}
+section .img-grid > *:nth-child(9) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+}
+section .img-grid > *:nth-child(10) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 3;
+}
+section .img-grid .item1, section .img-grid .item2, section .img-grid .item3, section .img-grid .item4 {
+  border-radius: 20px;
+}
+section .img-grid .item1:hover, section .img-grid .item2:hover, section .img-grid .item3:hover, section .img-grid .item4:hover {
+  width: 640px;
+  height: -10%;
+}
+section .img-grid .item1 {
+  background: url(../img/pictures/about-1.svg);
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 2;
+  grid-row-end: 3;
+}
+section .img-grid .item2 {
+  background: url(../img/pictures/about-2.svg);
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  -ms-grid-row-span: 2;
+  grid-row-end: 5;
+  background-position: center;
+}
+section .img-grid .item3 {
+  background: url(../img/pictures/about-3.svg);
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
+  background-position: center;
+}
+section .img-grid .item4 {
+  background: url(../img/pictures/about-4.svg);
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  -ms-grid-row-span: 3;
+  grid-row-end: 5;
+}
+section .mobile-app {
+  margin: 0 2.2em 0 2.2em;
+  position: relative;
+  top: -8em;
+}
+section .mobile-app .mobile-text {
+  position: relative;
+  top: 5em;
+  width: 630px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+}
+section .mobile-app .mobile-text .btn-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 20px;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps {
+  padding: 12px 20px;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps .btn-1, section .mobile-app .mobile-text .btn-app .btn-apps .btn-2 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps .btn-1 .text, section .mobile-app .mobile-text .btn-app .btn-apps .btn-2 .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+  font-weight: 600;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: left;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps .btn-1 .text .span-btn, section .mobile-app .mobile-text .btn-app .btn-apps .btn-2 .text .span-btn {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps .btn-1:before {
+  content: url(../img/icons/AppleStore.svg);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps .btn-2:before {
+  content: url(../img/icons/GooglePlay.svg);
+}
+section .mobile-app .mobile-img {
+  position: relative;
+  left: 53%;
+  top: -25em;
+}
+
+footer {
+  position: relative;
+  top: -27.5em;
+}
+footer .footer-grid {
+  margin: 0 2.2em 0 2.2em;
+  max-width: 1360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 100px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 40px;
+  background-color: var(--border-color);
+  height: 450px;
+}
+footer .footer-grid .footer-icons {
+  position: relative;
+  top: -1em;
+}
+footer .footer-grid .footer-icons .sub-heading {
+  color: var(--light-font-color);
+  width: 530px;
+  margin: 0;
+}
+footer .footer-grid .footer-icons ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  position: relative;
+  top: 2em;
+}
+footer .footer-grid .footer-icons ul li {
+  width: 60px;
+  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100px;
+  border: 1px solid var(--border-light);
+}
+footer .footer-grid .footer-icons ul li .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+}
+footer .footer-grid .footer-contacts {
+  position: relative;
+  max-width: 530px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  color: var(--background-color);
+  left: 0.2em;
+}
+footer .footer-grid .footer-contacts ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 16px;
+}
+footer .footer-grid .footer-contacts ul .contact-1, footer .footer-grid .footer-contacts ul .contact-2, footer .footer-grid .footer-contacts ul .contact-3 {
+  color: var(--background-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+footer .footer-grid .footer-contacts ul .contact-1:hover, footer .footer-grid .footer-contacts ul .contact-2:hover, footer .footer-grid .footer-contacts ul .contact-3:hover {
+  cursor: pointer;
+  color: var(--main-font-color);
+}
+footer .footer-grid .footer-contacts ul .contact-1:before {
+  content: url(../img/icons/pin-alt.svg);
+  margin-right: 4px;
+}
+footer .footer-grid .footer-contacts ul .contact-2:before {
+  content: url(../img/icons/phone.svg);
+  margin-right: 4px;
+}
+footer .footer-grid .footer-contacts ul .contact-3:before {
+  content: url(../img/icons/clock.svg);
+  margin-right: 4px;
+}
