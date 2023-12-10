@@ -30,7 +30,7 @@ h1 {
   color: var(--light-font-color);
 }
 
-.sub-heading {
+.sub-heading, .sub-heading-menu {
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
@@ -339,6 +339,123 @@ section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag {
 section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag.active {
   background: var(--border-color);
 }
+section .favorite-coffee .sub-heading-menu {
+  max-width: 880px;
+  text-align: center;
+}
+section .favorite-coffee .btn-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+section .favorite-coffee .btn-menu form button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 16px 8px 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 8px;
+  border-radius: 100px;
+  width: 115px;
+  height: 46px;
+  border: 1px solid var(--border-light);
+  background: var(--background-color);
+}
+section .favorite-coffee .btn-menu form button span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  font-family: "Inter", sans-serif;
+}
+section .favorite-coffee .btn-menu form button .coffee-span:before {
+  content: url(../img/icons/cofee-cup-small.svg);
+  background-color: var(--border-light);
+  border-radius: 100px;
+  width: 16px;
+  height: 24px;
+  padding: 3px 7px;
+}
+section .favorite-coffee .btn-menu form button .tea-span:before {
+  content: url(../img/icons/kettle.svg);
+  background-color: var(--border-light);
+  border-radius: 100px;
+  width: 16px;
+  height: 24px;
+  padding: 3px 7px;
+}
+section .favorite-coffee .btn-menu form button .dessert-span:before {
+  content: url(../img/icons/cake.svg);
+  background-color: var(--border-light);
+  border-radius: 100px;
+  width: 16px;
+  height: 24px;
+  padding: 3px 3px;
+}
+section .favorite-coffee .btn-menu form button:hover {
+  background-color: var(--border-color);
+  color: var(--light-font-color);
+  cursor: pointer;
+}
+section .favorite-coffee .btn-menu form button.active {
+  background-color: var(--border-color);
+  color: var(--light-font-color);
+  cursor: not-allowed;
+}
+section .favorite-coffee .btn-menu form button.active:before {
+  background-color: var(--border-light);
+}
+section .favorite-coffee .menu-container {
+  max-width: 1360px;
+  left: 40px;
+  position: relative;
+}
+section .favorite-coffee .menu-container ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+section .favorite-coffee .menu-container ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 506px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 310px;
+}
+section .favorite-coffee .menu-container ul li img {
+  max-width: 310px;
+  border-radius: 40px;
+}
+section .favorite-coffee .menu-container ul li .h3-heading, section .favorite-coffee .menu-container ul li .text {
+  margin-left: 20px;
+}
+section .favorite-coffee .menu-container ul li:hover img {
+  -webkit-transform: scale(90%);
+          transform: scale(90%);
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
 section .about {
   margin: 100px 2.2em 0 2.2em;
 }
@@ -646,4 +763,11 @@ footer .footer-grid .footer-contacts ul .contact-2:before {
 footer .footer-grid .footer-contacts ul .contact-3:before {
   content: url(../img/icons/clock.svg);
   margin-right: 4px;
+}
+footer .footer-grid-menu {
+  top: 2em;
+}
+
+.footer-menu {
+  top: 2em;
 }
