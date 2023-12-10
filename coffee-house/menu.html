@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="favicon.ico">
 </head>
 <body>
     <div class="body-container">
@@ -31,32 +36,57 @@
         </header>
         <section>
             <div class="favorite-coffee" id="favorite-coffee">
-                <h2 class="sub-heading">Choose your <span class="accent">favorite</span> coffee</h2>
-                <div class="coffee-scroll">
-                    <div class="arrow-left"></div>
-                    <div class="drinks">
-                        <ul>
-                            <li class="drink-item"><img  src="img/pictures/coffee-slider-1.svg" alt="cofee drink"></li>
-                            <li class="drink-item"><img  src="img/pictures/coffee-slider-2.svg" alt="cofee drink"></li>
-                            <li class="drink-item"><img  src="img/pictures/coffee-slider-3.svg" alt="cofee drink"></li>
-                        </ul>
-                        <div class="coffee-text">
-                            <h3 class="h3-heading">S’mores Frappuccino</h3>
-                            <p class="text">This new drink takes an espresso and mixes it with brown 
-                                sugar and cinnamon before being topped with oat milk.</p>
-                                <h3 class="h3-heading">$5.50</h3>
-                                </div>
-                                <div class="pag-btn">
-                                    <ul>
-                                        <li class="pag active"><a></a></li>
-                                        <li class="pag"><a></a></li>
-                                        <li class="pag"><a></a></li>
-                                    </ul>
-                                </div>
-                    </div>
-                    <div class="arrow-right"></div>
+                <h2 class="sub-heading-menu">Behind each of our cups hides <span class="accent">an amazing surprise</span></h2>
+                <div class="btn-menu">
+                    <form action="menu.html">
+                        <button class="active"><span class="coffee-span">Coffee</span></button>
+                    </form>
+                    <form action="tea.html">
+                        <button><span class="tea-span">Tea</span></button>
+                    </form>
+                    <form action="dessert.html">
+                        <button><span class="dessert-span">Dessert</span></button>
+                    </form>
+                </div>
+                </div>
+                <div class="menu-container">
+                    <ul>
+                        <li><img src="img/pictures/coffee-1.svg" alt="coffee-drink">
+                            <h3 class="h3-heading">Irish coffee</h3>
+                            <p class="text">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                                <h3 class="h3-heading">$7.00</h3></li>
+                        <li><img src="img/pictures/coffee-2.svg" alt="coffee-drink">
+                                    <h3 class="h3-heading">Kahlua coffee</h3>
+                                    <p class="text">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+                                        <h3 class="h3-heading">$7.00</h3></li>
+                        <li><img src="img/pictures/coffee-3.svg" alt="coffee-drink">
+                                            <h3 class="h3-heading">Honey raf</h3>
+                                            <p class="text">Espresso with frothed milk, cream and aromatic honey</p>
+                                            <h3 class="h3-heading">$5.50</h3></li>
+                        <li><img src="img/pictures/coffee-4.svg" alt="coffee-drink">
+                                                 <h3 class="h3-heading">Ice cappuccino</h3>
+                                                <p class="text">Cappuccino with soft thick foam in summer version with ice</p>
+                                                <h3 class="h3-heading">$5.00</h3></li>
+                        <li><img src="img/pictures/coffee-5.svg" alt="coffee-drink">
+                                                <h3 class="h3-heading">Espresso</h3>
+                                                 <p class="text">Classic black coffee</p>
+                                                 <h3 class="h3-heading">$4.50</h3></li>
+                                                 <li><img src="img/pictures/coffee-6.svg" alt="coffee-drink">
+                                                    <h3 class="h3-heading">Latte</h3>
+                                                    <p class="text">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+                                                        <h3 class="h3-heading">$5.50</h3></li>
+                                                <li><img src="img/pictures/coffee-7.svg" alt="coffee-drink">
+                                                            <h3 class="h3-heading">Latte macchiato</h3>
+                                                            <p class="text">Espresso with frothed milk and chocolate</p>
+                                                                <h3 class="h3-heading">$5.50</h3></li>
+                                                <li><img src="img/pictures/coffee-8.svg" alt="coffee-drink">
+                                                                    <h3 class="h3-heading">Coffee with cognac</h3>
+                                                                    <p class="text">Fragrant black coffee with cognac and whipped cream</p>
+                                                                    <h3 class="h3-heading">$6.50</h3></li>
+                    </ul>
+                </div>
         </section>
-        <footer>
+        <footer class="footer-menu">
             <div class="footer-grid">
                 <nav class="footer-icons">
                     <h2 class="sub-heading">Sip, Savor, Smile. <span class="accent">It’s coffee time!</span></h2>

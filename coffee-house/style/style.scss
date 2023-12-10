@@ -29,7 +29,7 @@ h1{
     color: var(--light-font-color);
 }
 
-.sub-heading{
+.sub-heading, .sub-heading-menu{
     font-size: 60px;
     font-weight: 600;
     line-height: 125%;
@@ -262,6 +262,110 @@ section{
             }
         }
         }
+        .sub-heading-menu{
+            max-width: 880px;
+            text-align: center;
+        }
+        .btn-menu{
+            display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+            form{
+                button{
+                    display: flex;
+                    padding: 8px 16px 8px 8px;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 8px;
+                    border-radius: 100px;
+                    width: 115px;
+                    height: 46px;
+                    border: 1px solid var(--border-light);
+                    background: var(--background-color);
+                    span{
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 150%;
+                        font-family: "Inter", sans-serif;
+                    }
+                    .coffee-span{
+                        &:before{
+                            content: url(../img/icons/cofee-cup-small.svg);
+                            background-color: var(--border-light);
+                            border-radius: 100px;
+                            width: 16px;
+                            height: 24px;
+                            padding: 3px 7px;
+                        }
+                    }
+                    .tea-span{
+                        &:before{
+                            content: url(../img/icons/kettle.svg);
+                            background-color: var(--border-light);
+                            border-radius: 100px;
+                            width: 16px;
+                            height: 24px;
+                            padding: 3px 7px;
+                        }
+                    }
+                    .dessert-span{
+                        &:before{
+                            content: url(../img/icons/cake.svg);
+                            background-color: var(--border-light);
+                            border-radius: 100px;
+                            width: 16px;
+                            height: 24px;
+                            padding: 3px 3px;                                                      
+                        }
+                    }
+                    &:hover{
+                        background-color: var(--border-color);
+                        color: var(--light-font-color);
+                        cursor: pointer;
+                    }
+                    &.active{
+                        background-color: var(--border-color);
+                        color: var(--light-font-color);
+                        cursor: not-allowed;
+                        &:before{
+                            background-color: var(--border-light);
+                        }
+                    }
+                }
+            }
+        }
+        .menu-container{
+            max-width: 1360px;
+            left: 40px;
+            position: relative;
+            ul{
+                display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            li{
+                display: flex;
+                height: 506px;
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 310px;
+                img{
+                    max-width: 310px;
+                    border-radius: 40px;
+                }
+                .h3-heading, .text{
+                    margin-left: 20px;
+                }
+                &:hover{
+                    img{
+                        transform: scale(90%);
+                        transition: all ease 0.5s;
+                    }
+                }
+            }
+            }
+        }
     }
     .about{
         margin: 100px 2.2em 0 2.2em;
@@ -462,4 +566,10 @@ footer{
             }
         }
     }
+    .footer-grid-menu{
+        top: 2em;
+    }
+}
+.footer-menu{
+    top: 2em;
 }
