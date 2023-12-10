@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+coffee-house/android-chrome-192x192.png
+coffee-house/android-chrome-512x512.png
+coffee-house/apple-touch-icon.png
+coffee-house/favicon-16x16.png
+coffee-house/favicon-32x32.png
+coffee-house/favicon.ico
+coffee-house/site.webmanifest
