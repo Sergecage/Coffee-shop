@@ -725,6 +725,27 @@ footer .footer-grid .footer-icons ul li:hover {
   border: none;
   cursor: pointer;
 }
+footer .footer-grid .footer-icons ul li:hover .social {
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 1em;
+}
+footer .footer-grid .footer-icons ul li:hover .social img {
+  display: none;
+}
+footer .footer-grid .footer-icons ul li:hover .social:first-child {
+  background: url(../img/icons/twitter-black.svg);
+}
+footer .footer-grid .footer-icons ul li:hover:nth-child(2) .social {
+  background: url(../img/icons/instagram-black.svg);
+}
+footer .footer-grid .footer-icons ul li:hover:nth-child(3) .social {
+  background: url(../img/icons/facebook-black.svg);
+}
 footer .footer-grid .footer-contacts {
   position: relative;
   max-width: 530px;
