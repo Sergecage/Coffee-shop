@@ -540,6 +540,31 @@ footer{
                         background: var(--accent-font-color);
                         border: none;
                         cursor: pointer;
+                        .social{
+                            background-position: center;
+                                background-repeat: no-repeat;
+                                display: block;
+                                width: 24px;
+                                height: 24px;
+                                position: relative;
+                                left: 1em;
+                            img{
+                                display: none;
+                            }
+                            &:first-child{
+                                background: url(../img/icons/twitter-black.svg);
+                            }
+                        }
+                        &:nth-child(2){
+                            .social{
+                                background: url(../img/icons/instagram-black.svg);
+                            }
+                        }
+                        &:nth-child(3){
+                            .social{
+                                background: url(../img/icons/facebook-black.svg);
+                            }
+                        }
                     }
                 }
             }
