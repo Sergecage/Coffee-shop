@@ -60,7 +60,6 @@ h1 {
 
 .btn-primary:hover, .btn-apps:hover {
   cursor: pointer;
-  opacity: 0.5;
 }
 
 ul {
@@ -73,6 +72,7 @@ a {
 a:hover {
   color: var(--accent-font-color);
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .accent {
@@ -250,6 +250,7 @@ section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .c
 section .favorite-coffee .coffee-scroll .arrow-left:hover, section .favorite-coffee .coffee-scroll .arrow-right:hover {
   cursor: pointer;
   background-color: var(--border-color);
+  background-image: url(../img/icons/arrow-right-white.svg);
 }
 section .favorite-coffee .coffee-scroll .arrow-left {
   -webkit-transform: rotate(180deg);
@@ -337,6 +338,10 @@ section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag {
   background: var(--border-light);
 }
 section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag.active {
+  background: var(--border-color);
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag:hover {
+  cursor: pointer;
   background: var(--border-color);
 }
 section .favorite-coffee .sub-heading-menu {
@@ -623,6 +628,19 @@ section .mobile-app .mobile-text .btn-app .btn-apps .btn-1:before {
 section .mobile-app .mobile-text .btn-app .btn-apps .btn-2:before {
   content: url(../img/icons/GooglePlay.svg);
 }
+section .mobile-app .mobile-text .btn-app .btn-apps:hover {
+  background: var(--border-color);
+  border: none;
+}
+section .mobile-app .mobile-text .btn-app .btn-apps:hover .btn-1, section .mobile-app .mobile-text .btn-app .btn-apps:hover .btn-2 {
+  color: var(--light-font-color);
+}
+section .mobile-app .mobile-text .btn-app .btn-apps:hover .btn-1::before {
+  content: url(../img/icons/AppleStore-white.svg);
+}
+section .mobile-app .mobile-text .btn-app .btn-apps:hover .btn-2::before {
+  content: url(../img/icons/GooglePlay-white.svg);
+}
 section .mobile-app .mobile-img {
   position: relative;
   left: 53%;
@@ -702,6 +720,11 @@ footer .footer-grid .footer-icons ul li .social {
           align-items: center;
   margin-top: 1em;
 }
+footer .footer-grid .footer-icons ul li:hover {
+  background: var(--accent-font-color);
+  border: none;
+  cursor: pointer;
+}
 footer .footer-grid .footer-contacts {
   position: relative;
   max-width: 530px;
@@ -750,7 +773,7 @@ footer .footer-grid .footer-contacts ul .contact-1, footer .footer-grid .footer-
 }
 footer .footer-grid .footer-contacts ul .contact-1:hover, footer .footer-grid .footer-contacts ul .contact-2:hover, footer .footer-grid .footer-contacts ul .contact-3:hover {
   cursor: pointer;
-  color: var(--main-font-color);
+  text-decoration: underline;
 }
 footer .footer-grid .footer-contacts ul .contact-1:before {
   content: url(../img/icons/pin-alt.svg);

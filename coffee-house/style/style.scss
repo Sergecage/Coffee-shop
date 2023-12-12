@@ -58,7 +58,6 @@ h1{
 .btn-primary, .btn-apps{
     &:hover{
         cursor: pointer;
-    opacity: 0.5;
     }
 }
 ul{
@@ -70,6 +69,7 @@ a{
     &:hover{
         color: var(--accent-font-color);
         cursor: pointer;
+        text-decoration: underline;
     }
 }
 
@@ -200,6 +200,7 @@ section{
                 &:hover{
                         cursor: pointer;
                         background-color: var(--border-color);
+                        background-image: url(../img/icons/arrow-right-white.svg);
                     }
             }
             .arrow-left{
@@ -255,6 +256,10 @@ section{
                         border-radius: 100px;
                         background: var(--border-light);
                         &.active{
+                            background: var(--border-color);
+                        }
+                        &:hover{
+                            cursor: pointer;
                             background: var(--border-color);
                         }
                     }
@@ -460,6 +465,23 @@ section{
                             content: url(../img/icons/GooglePlay.svg);
                         }
                     }
+                    &:hover{
+                        background: var(--border-color);
+                        border: none;
+                        .btn-1, .btn-2{
+                            color: var(--light-font-color);
+                        }
+                        .btn-1{
+                            &::before{
+                                content: url(../img/icons/AppleStore-white.svg);
+                            }
+                        }
+                        .btn-2{
+                            &::before{
+                                content: url(../img/icons/GooglePlay-white.svg);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -514,6 +536,11 @@ footer{
                         align-items: center;
                         margin-top: 1em; 
                     }
+                    &:hover{
+                        background: var(--accent-font-color);
+                        border: none;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -542,7 +569,7 @@ footer{
                     line-height: 150%;
                     &:hover{
                         cursor: pointer;
-                        color: var(--main-font-color);
+                        text-decoration: underline;
                     }
                 }
                 .contact-1{
