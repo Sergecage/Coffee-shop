@@ -4,6 +4,9 @@
     padding: 0;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 :root{
     --main-font-color: #403F3D;
@@ -101,7 +104,7 @@ header{
     }
     .header-menu{
        position: absolute;
-       left: 35.5%;
+       left: 35%;
        top: 2.2em;
         ul{
             display: flex;
@@ -117,7 +120,11 @@ header{
             padding-left: 8px;
         }
         &:hover{
-            text-decoration: underline;
+            a{
+                text-decoration: none;
+            cursor: none;
+            color: var(--main-font-color);
+            }
         }
     }
 }
@@ -268,14 +275,18 @@ section{
         }
         }
         .sub-heading-menu{
+            position: relative;
             max-width: 880px;
             text-align: center;
+            left: 0.6em;
         }
         .btn-menu{
             display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 16px;
+                position: relative;
+                left: 2em;
             form{
                 button{
                     display: flex;
@@ -284,8 +295,7 @@ section{
                     align-items: flex-start;
                     gap: 8px;
                     border-radius: 100px;
-                    width: 115px;
-                    height: 46px;
+                    
                     border: 1px solid var(--border-light);
                     background: var(--background-color);
                     span{
@@ -302,7 +312,7 @@ section{
                             border-radius: 100px;
                             width: 16px;
                             height: 24px;
-                            padding: 3px 7px;
+                            padding: 4px 7px;
                         }
                     }
                     .tea-span{
@@ -313,6 +323,8 @@ section{
                             width: 16px;
                             height: 24px;
                             padding: 3px 7px;
+                            position: relative;
+                            left: -0.5em;
                         }
                     }
                     .dessert-span{
@@ -343,24 +355,46 @@ section{
         }
         .menu-container{
             max-width: 1360px;
-            left: 40px;
+            left: 38px;
             position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 2em;
+            overflow: hidden;
             ul{
                 display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 40px;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
             li{
                 display: flex;
                 height: 506px;
                 flex-direction: column;
                 align-items: flex-start;
                 max-width: 310px;
+                border: 1px solid var(--border-light);
+                border-radius: 40px;
                 img{
                     max-width: 310px;
                     border-radius: 40px;
                 }
-                .h3-heading, .text{
-                    margin-left: 20px;
+                .item-text{
+                    align-self: stretch;
+                    display: grid;
+                    grid-template-rows: auto 1fr auto;
+                    padding: 20px;
+                    height: 38%;
+                    .h3-heading, .text{
+                        margin-bottom: 12px;
+                        &.price{
+                            
+                            margin-bottom: 0;
+                        }
+                    }
+                    .text{
+                        max-width: 270px;
+                    }
                 }
                 &:hover{
                     img{
@@ -370,6 +404,11 @@ section{
                 }
             }
             }
+        }
+        &.menu{
+            position: relative;
+            margin: 0;
+            top: -0.5em;
         }
     }
     .about{
@@ -384,43 +423,47 @@ section{
         top: 4.3em;
         display: grid;
         gap: 40px;
-        grid-template-columns: 660px 660px;
-        grid-template-rows: 330px 220px 160px 220px 330px;
-        .item1, .item2, .item3, .item4{
-                border-radius: 20px;
-                &:hover{
-                    width: 640px;
-                    height: -10%;
-                }
-                
+        grid-template-columns: 1fr 1fr;
+        .col-1, .col-2{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            li{
+               border-radius: 20px;
+               &:hover{
+                transform: scale(90%);
+               }
+            }
         }
-        .item1{
-            background: url(../img/pictures/about-1.svg);
-            grid-row-start: 1;
-            grid-row-end: 3;
+        .col-1{
+            .item1{
+                background: url(../img/pictures/about-1.svg);
+                height: 590px;
+                background-position: center;
+            }
+            .item2{
+                background: url(../img/pictures/about-2.svg);
+                height: 430px;
+                background-position: center;
+            }
         }
-        .item2{
-            background: url(../img/pictures/about-2.svg);
-            grid-row-start: 3;
-            grid-row-end: 5;
-            background-position: center;
-        }
-        .item3{
-            background: url(../img/pictures/about-3.svg);
-            grid-row-start: 1;
-            grid-row-end: 2;
-            background-position: center;
-        }
-        .item4{
-            background: url(../img/pictures/about-4.svg);
-            grid-row-start: 2;
-            grid-row-end: 5;
+        .col-2{
+            .item1{
+                background: url(../img/pictures/about-3.svg);
+                height: 430px;
+                background-position: center;
+            }
+            .item2{
+                background: url(../img/pictures/about-4.svg);
+                height: 590px;
+                background-position: center;
+            }
         }
     }
     .mobile-app{
         margin: 0 2.2em 0 2.2em;
         position: relative;
-        top: -8em;
+        top: 14.5em;
         .mobile-text{
             position: relative;
             top: 5em;
@@ -488,14 +531,14 @@ section{
         .mobile-img{
             position: relative;
             left: 53%;
-            top: -25em;
+            top: -25.5em;
         }
     }
 }
 
 footer{  
     position: relative;
-    top: -27.5em;
+    top: -4.9em;
     .footer-grid{
         margin: 0 2.2em 0 2.2em;
         max-width: 1360px;
@@ -623,5 +666,5 @@ footer{
     }
 }
 .footer-menu{
-    top: 2em;
+    top: 4.6em;
 }

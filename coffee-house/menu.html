@@ -35,53 +35,113 @@
             </div>
         </header>
         <section>
-            <div class="favorite-coffee" id="favorite-coffee">
-                <h2 class="sub-heading-menu">Behind each of our cups hides <span class="accent">an amazing surprise</span></h2>
+            <div class="favorite-coffee menu" id="favorite-coffee">
+                <h2 class="sub-heading-menu">Behind each of our cups<br> hides <span class="accent">an amazing surprise</span></h2>
                 <div class="btn-menu">
-                    <form action="menu.html">
+                    <form action="#coffee-list">
                         <button class="active"><span class="coffee-span">Coffee</span></button>
                     </form>
-                    <form action="tea.html">
+                    <form action="#tea-list">
                         <button><span class="tea-span">Tea</span></button>
                     </form>
-                    <form action="dessert.html">
+                    <form action="#dessert-list">
                         <button><span class="dessert-span">Dessert</span></button>
                     </form>
                 </div>
                 <div class="menu-container">
-                    <ul>
+                    <ul class="coffee-list" id="coffee-list">
                         <li><img src="img/pictures/coffee-1.svg" alt="coffee-drink">
-                            <h3 class="h3-heading">Irish coffee</h3>
+                            <div class="item-text">
+                                <h3 class="h3-heading">Irish coffee</h3>
                             <p class="text">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-                                <h3 class="h3-heading">$7.00</h3></li>
+                            <h3 class="h3-heading price">$7.00</h3></div></li>
                         <li><img src="img/pictures/coffee-2.svg" alt="coffee-drink">
-                                    <h3 class="h3-heading">Kahlua coffee</h3>
-                                    <p class="text">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-                                        <h3 class="h3-heading">$7.00</h3></li>
+                            <div class="item-text">
+                                <h3 class="h3-heading">Kahlua coffee</h3>
+                            <p class="text">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+                            <h3 class="h3-heading price">$7.00</h3></div></li>
                         <li><img src="img/pictures/coffee-3.svg" alt="coffee-drink">
-                                            <h3 class="h3-heading">Honey raf</h3>
-                                            <p class="text">Espresso with frothed milk, cream and aromatic honey</p>
-                                            <h3 class="h3-heading">$5.50</h3></li>
+                            <div class="item-text"><h3 class="h3-heading">Honey raf</h3>
+                                <p class="text">Espresso with frothed milk, cream and aromatic honey</p>
+                                <h3 class="h3-heading price">$5.50</h3></div></li>
                         <li><img src="img/pictures/coffee-4.svg" alt="coffee-drink">
-                                                 <h3 class="h3-heading">Ice cappuccino</h3>
-                                                <p class="text">Cappuccino with soft thick foam in summer version with ice</p>
-                                                <h3 class="h3-heading">$5.00</h3></li>
+                            <div class="item-text">
+                                <h3 class="h3-heading">Ice cappuccino</h3>
+                            <p class="text">Cappuccino with soft thick foam in summer version with ice</p>
+                            <h3 class="h3-heading price">$5.00</h3>
+                            </div></li>
                         <li><img src="img/pictures/coffee-5.svg" alt="coffee-drink">
-                                                <h3 class="h3-heading">Espresso</h3>
-                                                 <p class="text">Classic black coffee</p>
-                                                 <h3 class="h3-heading">$4.50</h3></li>
-                                                 <li><img src="img/pictures/coffee-6.svg" alt="coffee-drink">
-                                                    <h3 class="h3-heading">Latte</h3>
-                                                    <p class="text">Espresso coffee with the addition of steamed milk and dense milk foam</p>
-                                                        <h3 class="h3-heading">$5.50</h3></li>
-                                                <li><img src="img/pictures/coffee-7.svg" alt="coffee-drink">
-                                                            <h3 class="h3-heading">Latte macchiato</h3>
-                                                            <p class="text">Espresso with frothed milk and chocolate</p>
-                                                                <h3 class="h3-heading">$5.50</h3></li>
-                                                <li><img src="img/pictures/coffee-8.svg" alt="coffee-drink">
-                                                                    <h3 class="h3-heading">Coffee with cognac</h3>
-                                                                    <p class="text">Fragrant black coffee with cognac and whipped cream</p>
-                                                                    <h3 class="h3-heading">$6.50</h3></li>
+                            <div class="item-text">
+                                <h3 class="h3-heading">Espresso</h3>
+                            <p class="text">Classic black coffee</p>
+                            <h3 class="h3-heading price">$4.50</h3>
+                            </div></li>
+                        <li><img src="img/pictures/coffee-6.svg" alt="coffee-drink">
+                            <div class="item-text">
+                                <h3 class="h3-heading">Latte</h3>
+                            <p class="text">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+                            <h3 class="h3-heading price">$5.50</h3>
+                            </div></li>
+                        <li><img src="img/pictures/coffee-7.svg" alt="coffee-drink">
+                            <div class="item-text"><h3 class="h3-heading">Latte macchiato</h3>
+                                <p class="text">Espresso with frothed milk and chocolate</p>
+                                <h3 class="h3-heading price">$5.50</h3></dic></li>
+                        <li><img src="img/pictures/coffee-8.svg" alt="coffee-drink">
+                            <div class="item-text"><h3 class="h3-heading">Coffee with cognac</h3>
+                                <p class="text">Fragrant black coffee with cognac and whipped cream</p>
+                                <h3 class="h3-heading price">$6.50</h3></div></li>
+                    </ul>
+                    <ul class="tea-list" id="tea-list">
+                        <li><img src="img/pictures/tea-1.svg" alt="tea-drink">
+                            <h3 class="h3-heading">Moroccan</h3>
+                            <p class="text">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+                            <h3 class="h3-heading">$4.50</h3></li>
+                        <li><img src="img/pictures/tea-2.svg" alt="tea-drink">
+                            <h3 class="h3-heading">Ginger</h3>
+                            <p class="text">Original black tea with fresh ginger, lemon and honey</p>
+                            <h3 class="h3-heading">$5.00</h3></li>
+                        <li><img src="img/pictures/tea-3.svg" alt="tea-drink">
+                            <h3 class="h3-heading">Cranberry</h3>
+                            <p class="text">Invigorating black tea with cranberry and honey</p>
+                            <h3 class="h3-heading">$5.00</h3></li>
+                        <li><img src="img/pictures/tea-4.svg" alt="tea-drink">
+                            <h3 class="h3-heading">Sea buckthorn</h3>
+                            <p class="text">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+                            <h3 class="h3-heading">$5.50</h3></li>
+                    </ul>
+                    <ul class="dessert-list" id="dessert-list">
+                        <li><img src="img/pictures/dessert-1.svg" alt="dessert">
+                            <h3 class="h3-heading">Marble cheesecake</h3>
+                            <p class="text">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+                            <h3 class="h3-heading">$3.50</h3></li>
+                        <li><img src="img/pictures/dessert-2.svg" alt="dessert">
+                            <h3 class="h3-heading">Red velvet</h3>
+                            <p class="text">Layer cake with cream cheese frosting</p>
+                            <h3 class="h3-heading">$4.00</h3></li>
+                        <li><img src="img/pictures/dessert-3.svg" alt="dessert">
+                            <h3 class="h3-heading">Cheesecakes</h3>
+                            <p class="text">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+                            <h3 class="h3-heading">$4.50</h3></li>
+                        <li><img src="img/pictures/dessert-4.svg" alt="dessert">
+                            <h3 class="h3-heading">Creme brulee</h3>
+                            <p class="text">Delicate creamy dessert in a caramel basket with wild berries</p>
+                            <h3 class="h3-heading">$4.00</h3></li>
+                        <li><img src="img/pictures/dessert-5.svg" alt="dessert">
+                            <h3 class="h3-heading">Pancakes</h3>
+                            <p class="text">Tender pancakes with strawberry jam and fresh strawberries</p>
+                            <h3 class="h3-heading">$4.50</h3></li>
+                        <li><img src="img/pictures/dessert-6.svg" alt="dessert">
+                            <h3 class="h3-heading">Honey cake</h3>
+                            <p class="text">Classic honey cake with delicate custard</p>
+                            <h3 class="h3-heading">$4.50</h3></li>
+                        <li><img src="img/pictures/dessert-7.svg" alt="dessert">
+                            <h3 class="h3-heading">Chocolate cake</h3>
+                            <p class="text">Cake with hot chocolate filling and nuts with dried apricots</p>
+                            <h3 class="h3-heading">$5.50</h3></li>
+                        <li><img src="img/pictures/dessert-8.svg" alt="dessert">
+                            <h3 class="h3-heading">Black forest</h3>
+                            <p class="text">A combination of thin sponge cake with cherry jam and light chocolate mousse</p>
+                            <h3 class="h3-heading">$6.50</h3></li>
                     </ul>
                 </div>
             </div>
@@ -99,8 +159,8 @@
                 <nav class="footer-contacts">
                     <h3 class="h3-heading" id="contact">Contact us</h3>
                     <ul>
-                        <li><a class="contact-1">8558 Green Rd.,  LA</a></li>
-                        <li><a class="contact-2">+1 (603) 555-0123</a></li>
+                        <li><a class="contact-1" href="https://maps.app.goo.gl/4rwVTDBaM8bCSypR8">8558 Green Rd.,  LA</a></li>
+                        <li><a class="contact-2" href="tel:+1(603)-555-0123">+1 (603) 555-0123</a></li>
                         <li><a class="contact-3">Mon-Sat: 9:00 AM – 23:00 PM</a></li>
                     </ul>
                 </nav>
