@@ -131,6 +131,11 @@ header .menu-header {
 header .menu-header img {
   padding-left: 8px;
 }
+header .menu-header.menu a:hover {
+  cursor: default;
+  color: var(--main-font-color);
+  text-decoration: none;
+}
 
 main {
   position: relative;
