@@ -114,8 +114,8 @@ header{
     }
     .menu-header{
         position: relative;
-        left: 92.3%;
-        top: -3.2em;
+        margin-left: 48em;
+        top: -1.3em;
         img{
             padding-left: 8px;
         }
@@ -132,8 +132,6 @@ header{
 }
 
 main{
-    position: relative;
-    top: -0.8em;
     .enjoy{
         background: url(../img/pictures/img-hero.svg);
         background-size: 100%;
@@ -669,4 +667,223 @@ footer{
 }
 .footer-menu{
     top: 4.6em;
+}
+
+@media  screen and (max-width: 768px) {
+    header{
+        .burger-menu{
+            display: block;
+            position: relative;
+            width: 44px;
+            height: 44px;
+            left: 47.5%;
+            top: -3.4em;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid var(--main-font-color);
+            transition: all 0.3s ease 0s;
+            &::before, &::after{
+                content: "";
+                background-color: var(--main-font-color);
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                left: 25%;
+            }
+            &::before{
+                top: 35%;
+            }
+            &::after{
+                bottom: 35%;
+            }
+            &.active{
+                &::before{
+                    transform: rotate(45deg);
+                    top: 47%;
+                }
+                &::after{
+                    transform: rotate(-45deg);
+                    bottom: 47%;
+                }
+            }
+        }
+        .header-menu{
+            display: none;
+            z-index: 2;
+            background-color: var(--background-color);
+            width: 688px;
+            position: absolute;
+            top: 7em;
+            left: 5.2%;
+            ul{
+                flex-direction: column;
+                gap: 60px;
+                align-items: center;
+                padding-top: 3em;
+                a{
+                    font-size: 32px;
+                    line-height: 125%;
+                }
+            }
+            &.active{
+                display: block;
+                .menu-header{
+                    position: relative;
+                    left: 40%;
+                    top: 4.8em;
+                    background-color: var(--background-color);
+                    z-index: 3;
+                    margin: 0;
+                    a{
+                        font-size: 32px;
+                        line-height: 125%;
+                        img{
+                            width: 1.8em;
+                            height: 1.8em;
+                            padding-left: 16px;
+                            position: relative;
+                            top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main{
+        .enjoy{
+            padding: 100px 60px;
+            max-width: 688px;
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+            top: -1.6em;
+            &.active{
+                top: 35em;
+            }
+            .btn-primary{
+                &::after{
+                    content: url(../img/icons/coffee-cup.svg);
+                }
+            }
+        }
+    }
+    .sub-heading{
+        max-width: 688px;
+        text-align: center;
+    }
+    section{
+        .favorite-coffee{
+            margin-top: 80px;
+            .sub-heading{
+                left: 0;
+            }
+            .coffee-scroll{
+                left: -18.2em;
+                .drinks{
+                    width: 480px;
+                }
+            }
+            .sub-heading-menu{
+                left: 0;
+                max-width: 700px;
+                align-self: stretch;
+            }
+            &.menu{
+                align-items: flex-start;
+                .btn-menu{
+                    left: 10em;
+                }
+                .menu-container{
+                    max-width: 688px;
+                    ul{
+                        grid-template-columns: 1fr 1fr;
+                        overflow: none;
+                        li{
+                            &:nth-child(n + 5){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .about{
+            .sub-heading{
+                text-align: left;
+            }
+            .img-grid{
+                grid-template-columns: 1fr;
+                .col-1{
+                    .item1{
+                        background-repeat: no-repeat;
+                        position: relative;
+                        left: -20em;
+                    }
+                    .item2{
+                        display: none;
+                    }
+                }
+                .col-2{
+                    .item2{
+                        background-repeat: no-repeat;
+                        position: relative;
+                        left: -20em;
+                    }
+                    .item1{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .mobile-app{
+            max-width: 100%;
+            top: 5.8em;
+            .sub-heading{
+                text-align: left;
+            }
+            .mobile-img{
+                left: 1.5em;
+                top: 11em;
+            }
+        }
+        .refresh{
+            display: flex;
+            width: 60px;
+            height: 60px;       
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            left: 26%;
+            top: 8%;
+        }
+    }
+    footer{
+        top: 22.8em;
+        align-self: stretch;
+        margin: 0 40px;
+        .footer-grid{
+            flex-direction: column;
+            padding: 100px 60px;
+            margin: 0;
+            height: auto;
+            align-items: flex-start;
+            justify-content: center;
+            width: 688px;
+            .footer-icons{
+                top: 0;
+                .sub-heading{
+                    text-align: left;
+                }
+            }
+            .footer-contacts{
+                top: 2.2em;
+            }
+        }
+    }
+}
+
+@media  screen and (max-width: 380px) {
+
 }

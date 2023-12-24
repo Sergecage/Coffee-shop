@@ -125,8 +125,8 @@ header .header-menu ul {
 }
 header .menu-header {
   position: relative;
-  left: 92.3%;
-  top: -3.2em;
+  margin-left: 48em;
+  top: -1.3em;
 }
 header .menu-header img {
   padding-left: 8px;
@@ -137,10 +137,6 @@ header .menu-header.menu a:hover {
   text-decoration: none;
 }
 
-main {
-  position: relative;
-  top: -0.8em;
-}
 main .enjoy {
   background: url(../img/pictures/img-hero.svg);
   background-size: 100%;
@@ -817,4 +813,230 @@ footer .footer-grid-menu {
 
 .footer-menu {
   top: 4.6em;
+}
+
+@media screen and (max-width: 768px) {
+  header .burger-menu {
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    left: 47.5%;
+    top: -3.4em;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--main-font-color);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  header .burger-menu::before, header .burger-menu::after {
+    content: "";
+    background-color: var(--main-font-color);
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    left: 25%;
+  }
+  header .burger-menu::before {
+    top: 35%;
+  }
+  header .burger-menu::after {
+    bottom: 35%;
+  }
+  header .burger-menu.active::before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 47%;
+  }
+  header .burger-menu.active::after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: 47%;
+  }
+  header .header-menu {
+    display: none;
+    z-index: 2;
+    background-color: var(--background-color);
+    width: 688px;
+    position: absolute;
+    top: 7em;
+    left: 5.2%;
+  }
+  header .header-menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 3em;
+  }
+  header .header-menu ul a {
+    font-size: 32px;
+    line-height: 125%;
+  }
+  header .header-menu.active {
+    display: block;
+  }
+  header .header-menu.active .menu-header {
+    position: relative;
+    left: 40%;
+    top: 4.8em;
+    background-color: var(--background-color);
+    z-index: 3;
+    margin: 0;
+  }
+  header .header-menu.active .menu-header a {
+    font-size: 32px;
+    line-height: 125%;
+  }
+  header .header-menu.active .menu-header a img {
+    width: 1.8em;
+    height: 1.8em;
+    padding-left: 16px;
+    position: relative;
+    top: 0.5em;
+  }
+  main .enjoy {
+    padding: 100px 60px;
+    max-width: 688px;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    top: -1.6em;
+  }
+  main .enjoy.active {
+    top: 35em;
+  }
+  main .enjoy .btn-primary::after {
+    content: url(../img/icons/coffee-cup.svg);
+  }
+  .sub-heading {
+    max-width: 688px;
+    text-align: center;
+  }
+  section .favorite-coffee {
+    margin-top: 80px;
+  }
+  section .favorite-coffee .sub-heading {
+    left: 0;
+  }
+  section .favorite-coffee .coffee-scroll {
+    left: -18.2em;
+  }
+  section .favorite-coffee .coffee-scroll .drinks {
+    width: 480px;
+  }
+  section .favorite-coffee .sub-heading-menu {
+    left: 0;
+    max-width: 700px;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
+  section .favorite-coffee.menu {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  section .favorite-coffee.menu .btn-menu {
+    left: 10em;
+  }
+  section .favorite-coffee.menu .menu-container {
+    max-width: 688px;
+  }
+  section .favorite-coffee.menu .menu-container ul {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    overflow: none;
+  }
+  section .favorite-coffee.menu .menu-container ul li:nth-child(n+5) {
+    display: none;
+  }
+  section .about .sub-heading {
+    text-align: left;
+  }
+  section .about .img-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  section .about .img-grid .col-1 .item1 {
+    background-repeat: no-repeat;
+    position: relative;
+    left: -20em;
+  }
+  section .about .img-grid .col-1 .item2 {
+    display: none;
+  }
+  section .about .img-grid .col-2 .item2 {
+    background-repeat: no-repeat;
+    position: relative;
+    left: -20em;
+  }
+  section .about .img-grid .col-2 .item1 {
+    display: none;
+  }
+  section .mobile-app {
+    max-width: 100%;
+    top: 5.8em;
+  }
+  section .mobile-app .sub-heading {
+    text-align: left;
+  }
+  section .mobile-app .mobile-img {
+    left: 1.5em;
+    top: 11em;
+  }
+  section .refresh {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    left: 26%;
+    top: 8%;
+  }
+  footer {
+    top: 22.8em;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    margin: 0 40px;
+  }
+  footer .footer-grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 100px 60px;
+    margin: 0;
+    height: auto;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 688px;
+  }
+  footer .footer-grid .footer-icons {
+    top: 0;
+  }
+  footer .footer-grid .footer-icons .sub-heading {
+    text-align: left;
+  }
+  footer .footer-grid .footer-contacts {
+    top: 2.2em;
+  }
 }
