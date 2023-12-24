@@ -114,8 +114,8 @@ header{
     }
     .menu-header{
         position: relative;
-        left: 92.3%;
-        top: -3.2em;
+        margin-left: 48em;
+        top: -1.3em;
         img{
             padding-left: 8px;
         }
@@ -132,8 +132,6 @@ header{
 }
 
 main{
-    position: relative;
-    top: -0.8em;
     .enjoy{
         background: url(../img/pictures/img-hero.svg);
         background-size: 100%;
@@ -678,8 +676,8 @@ footer{
             position: relative;
             width: 44px;
             height: 44px;
-            left: 48%;
-            top: -3em;
+            left: 47.5%;
+            top: -3.4em;
             cursor: pointer;
             border-radius: 50%;
             border: 1px solid var(--main-font-color);
@@ -721,6 +719,7 @@ footer{
                 flex-direction: column;
                 gap: 60px;
                 align-items: center;
+                padding-top: 3em;
                 a{
                     font-size: 32px;
                     line-height: 125%;
@@ -728,18 +727,25 @@ footer{
             }
             &.active{
                 display: block;
-            }
-        }
-        .menu-header{
-            left: 20%;
-            top: 22em;
-            background-color: var(--background-color);
-            z-index: 2;
-            left: 5%;
-            align-items: center;
-            a{
-                font-size: 32px;
-                line-height: 125%;
+                .menu-header{
+                    position: relative;
+                    left: 40%;
+                    top: 4.8em;
+                    background-color: var(--background-color);
+                    z-index: 3;
+                    margin: 0;
+                    a{
+                        font-size: 32px;
+                        line-height: 125%;
+                        img{
+                            width: 1.8em;
+                            height: 1.8em;
+                            padding-left: 16px;
+                            position: relative;
+                            top: 0.5em;
+                        }
+                    }
+                }
             }
         }
     }
@@ -748,8 +754,60 @@ footer{
             padding: 100px 60px;
             max-width: 688px;
             background-repeat: no-repeat;
-           height: 644px;
             position: relative;
+            background-size: cover;
+            &.active{
+                top: 35em;
+            }
+        }
+    }
+    .sub-heading{
+        max-width: 688px;
+        text-align: center;
+    }
+    section{
+        .favorite-coffee{
+            .coffee-scroll{
+                left: -18em;
+                .drinks{
+                    width: 480px;
+                }
+            }
+        }
+        .about{
+            .img-grid{
+                grid-template-columns: 1fr;
+                .col-1{
+                    .item1{
+                        background-repeat: no-repeat;
+                        position: relative;
+                        left: -20em;
+                    }
+                    .item2{
+                        display: none;
+                    }
+                }
+                .col-2{
+                    .item2{
+                        background-repeat: no-repeat;
+                        position: relative;
+                        left: -20em;
+                    }
+                    .item1{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .mobile-app{
+            top: 4em;
+            .sub-heading{
+                text-align: left;
+            }
+            .mobile-img{
+                left: 0;
+                top: 7em;
+            }
         }
     }
 }

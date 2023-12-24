@@ -125,8 +125,8 @@ header .header-menu ul {
 }
 header .menu-header {
   position: relative;
-  left: 92.3%;
-  top: -3.2em;
+  margin-left: 48em;
+  top: -1.3em;
 }
 header .menu-header img {
   padding-left: 8px;
@@ -137,10 +137,6 @@ header .menu-header.menu a:hover {
   text-decoration: none;
 }
 
-main {
-  position: relative;
-  top: -0.8em;
-}
 main .enjoy {
   background: url(../img/pictures/img-hero.svg);
   background-size: 100%;
@@ -825,8 +821,8 @@ footer .footer-grid-menu {
     position: relative;
     width: 44px;
     height: 44px;
-    left: 48%;
-    top: -3em;
+    left: 47.5%;
+    top: -3.4em;
     cursor: pointer;
     border-radius: 50%;
     border: 1px solid var(--main-font-color);
@@ -875,6 +871,7 @@ footer .footer-grid-menu {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-top: 3em;
   }
   header .header-menu ul a {
     font-size: 32px;
@@ -883,25 +880,73 @@ footer .footer-grid-menu {
   header .header-menu.active {
     display: block;
   }
-  header .menu-header {
-    left: 20%;
-    top: 22em;
+  header .header-menu.active .menu-header {
+    position: relative;
+    left: 40%;
+    top: 4.8em;
     background-color: var(--background-color);
-    z-index: 2;
-    left: 5%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    z-index: 3;
+    margin: 0;
   }
-  header .menu-header a {
+  header .header-menu.active .menu-header a {
     font-size: 32px;
     line-height: 125%;
+  }
+  header .header-menu.active .menu-header a img {
+    width: 1.8em;
+    height: 1.8em;
+    padding-left: 16px;
+    position: relative;
+    top: 0.5em;
   }
   main .enjoy {
     padding: 100px 60px;
     max-width: 688px;
     background-repeat: no-repeat;
-    height: 644px;
     position: relative;
+    background-size: cover;
+  }
+  main .enjoy.active {
+    top: 35em;
+  }
+  .sub-heading {
+    max-width: 688px;
+    text-align: center;
+  }
+  section .favorite-coffee .coffee-scroll {
+    left: -18em;
+  }
+  section .favorite-coffee .coffee-scroll .drinks {
+    width: 480px;
+  }
+  section .about .img-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  section .about .img-grid .col-1 .item1 {
+    background-repeat: no-repeat;
+    position: relative;
+    left: -20em;
+  }
+  section .about .img-grid .col-1 .item2 {
+    display: none;
+  }
+  section .about .img-grid .col-2 .item2 {
+    background-repeat: no-repeat;
+    position: relative;
+    left: -20em;
+  }
+  section .about .img-grid .col-2 .item1 {
+    display: none;
+  }
+  section .mobile-app {
+    top: 4em;
+  }
+  section .mobile-app .sub-heading {
+    text-align: left;
+  }
+  section .mobile-app .mobile-img {
+    left: 0;
+    top: 7em;
   }
 }

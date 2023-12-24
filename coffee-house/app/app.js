@@ -1,8 +1,10 @@
-const menuButton = document.querySelectorAll('.burger-menu');
+const menuButton = document.querySelector('.burger-menu');
+const navMenu = document.querySelector('.header-menu');
+const enjoySection = document.querySelector('.enjoy');
 
 const activeBurger = () => {
     menuButton.classList.toggle('active');
-    menuButton.classList.contains('active') ? document.style.overflow = 'hidden': document.body.style.overflow = 'auto';
+    navMenu.classList.toggle('active');
+    enjoySection.classList.toggle('active');
 }
-
-menuButton.addEventListener('click', activeBurger);
+menuButton.addEventListener("click", activeBurger);
