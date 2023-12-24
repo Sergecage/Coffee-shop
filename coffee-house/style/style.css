@@ -905,19 +905,58 @@ footer .footer-grid-menu {
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
+    top: -1.6em;
   }
   main .enjoy.active {
     top: 35em;
+  }
+  main .enjoy .btn-primary::after {
+    content: url(../img/icons/coffee-cup.svg);
   }
   .sub-heading {
     max-width: 688px;
     text-align: center;
   }
+  section .favorite-coffee {
+    margin-top: 80px;
+  }
+  section .favorite-coffee .sub-heading {
+    left: 0;
+  }
   section .favorite-coffee .coffee-scroll {
-    left: -18em;
+    left: -18.2em;
   }
   section .favorite-coffee .coffee-scroll .drinks {
     width: 480px;
+  }
+  section .favorite-coffee .sub-heading-menu {
+    left: 0;
+    max-width: 700px;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
+  section .favorite-coffee.menu {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  section .favorite-coffee.menu .btn-menu {
+    left: 10em;
+  }
+  section .favorite-coffee.menu .menu-container {
+    max-width: 688px;
+  }
+  section .favorite-coffee.menu .menu-container ul {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    overflow: none;
+  }
+  section .favorite-coffee.menu .menu-container ul li:nth-child(n+5) {
+    display: none;
+  }
+  section .about .sub-heading {
+    text-align: left;
   }
   section .about .img-grid {
     -ms-grid-columns: 1fr;
@@ -940,13 +979,64 @@ footer .footer-grid-menu {
     display: none;
   }
   section .mobile-app {
-    top: 4em;
+    max-width: 100%;
+    top: 5.8em;
   }
   section .mobile-app .sub-heading {
     text-align: left;
   }
   section .mobile-app .mobile-img {
-    left: 0;
-    top: 7em;
+    left: 1.5em;
+    top: 11em;
+  }
+  section .refresh {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    left: 26%;
+    top: 8%;
+  }
+  footer {
+    top: 22.8em;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    margin: 0 40px;
+  }
+  footer .footer-grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 100px 60px;
+    margin: 0;
+    height: auto;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 688px;
+  }
+  footer .footer-grid .footer-icons {
+    top: 0;
+  }
+  footer .footer-grid .footer-icons .sub-heading {
+    text-align: left;
+  }
+  footer .footer-grid .footer-contacts {
+    top: 2.2em;
   }
 }

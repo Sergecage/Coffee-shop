@@ -756,8 +756,14 @@ footer{
             background-repeat: no-repeat;
             position: relative;
             background-size: cover;
+            top: -1.6em;
             &.active{
                 top: 35em;
+            }
+            .btn-primary{
+                &::after{
+                    content: url(../img/icons/coffee-cup.svg);
+                }
             }
         }
     }
@@ -767,14 +773,44 @@ footer{
     }
     section{
         .favorite-coffee{
+            margin-top: 80px;
+            .sub-heading{
+                left: 0;
+            }
             .coffee-scroll{
-                left: -18em;
+                left: -18.2em;
                 .drinks{
                     width: 480px;
                 }
             }
+            .sub-heading-menu{
+                left: 0;
+                max-width: 700px;
+                align-self: stretch;
+            }
+            &.menu{
+                align-items: flex-start;
+                .btn-menu{
+                    left: 10em;
+                }
+                .menu-container{
+                    max-width: 688px;
+                    ul{
+                        grid-template-columns: 1fr 1fr;
+                        overflow: none;
+                        li{
+                            &:nth-child(n + 5){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .about{
+            .sub-heading{
+                text-align: left;
+            }
             .img-grid{
                 grid-template-columns: 1fr;
                 .col-1{
@@ -800,14 +836,54 @@ footer{
             }
         }
         .mobile-app{
-            top: 4em;
+            max-width: 100%;
+            top: 5.8em;
             .sub-heading{
                 text-align: left;
             }
             .mobile-img{
-                left: 0;
-                top: 7em;
+                left: 1.5em;
+                top: 11em;
+            }
+        }
+        .refresh{
+            display: flex;
+            width: 60px;
+            height: 60px;       
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            left: 26%;
+            top: 8%;
+        }
+    }
+    footer{
+        top: 22.8em;
+        align-self: stretch;
+        margin: 0 40px;
+        .footer-grid{
+            flex-direction: column;
+            padding: 100px 60px;
+            margin: 0;
+            height: auto;
+            align-items: flex-start;
+            justify-content: center;
+            width: 688px;
+            .footer-icons{
+                top: 0;
+                .sub-heading{
+                    text-align: left;
+                }
+            }
+            .footer-contacts{
+                top: 2.2em;
             }
         }
     }
+}
+
+@media  screen and (max-width: 380px) {
+
 }
