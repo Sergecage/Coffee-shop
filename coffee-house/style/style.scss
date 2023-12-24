@@ -670,3 +670,86 @@ footer{
 .footer-menu{
     top: 4.6em;
 }
+
+@media  screen and (max-width: 768px) {
+    header{
+        .burger-menu{
+            display: block;
+            position: relative;
+            width: 44px;
+            height: 44px;
+            left: 48%;
+            top: -3em;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid var(--main-font-color);
+            transition: all 0.3s ease 0s;
+            &::before, &::after{
+                content: "";
+                background-color: var(--main-font-color);
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                left: 25%;
+            }
+            &::before{
+                top: 35%;
+            }
+            &::after{
+                bottom: 35%;
+            }
+            &.active{
+                &::before{
+                    transform: rotate(45deg);
+                    top: 47%;
+                }
+                &::after{
+                    transform: rotate(-45deg);
+                    bottom: 47%;
+                }
+            }
+        }
+        .header-menu{
+            display: none;
+            z-index: 2;
+            background-color: var(--background-color);
+            width: 688px;
+            position: absolute;
+            top: 7em;
+            left: 5.2%;
+            ul{
+                flex-direction: column;
+                gap: 60px;
+                align-items: center;
+                a{
+                    font-size: 32px;
+                    line-height: 125%;
+                }
+            }
+            &.active{
+                display: block;
+            }
+        }
+        .menu-header{
+            left: 20%;
+            top: 22em;
+            background-color: var(--background-color);
+            z-index: 2;
+            left: 5%;
+            align-items: center;
+            a{
+                font-size: 32px;
+                line-height: 125%;
+            }
+        }
+    }
+    main{
+        .enjoy{
+            padding: 100px 60px;
+            max-width: 688px;
+            background-repeat: no-repeat;
+           height: 644px;
+            position: relative;
+        }
+    }
+}

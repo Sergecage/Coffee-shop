@@ -818,3 +818,90 @@ footer .footer-grid-menu {
 .footer-menu {
   top: 4.6em;
 }
+
+@media screen and (max-width: 768px) {
+  header .burger-menu {
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    left: 48%;
+    top: -3em;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--main-font-color);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  header .burger-menu::before, header .burger-menu::after {
+    content: "";
+    background-color: var(--main-font-color);
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    left: 25%;
+  }
+  header .burger-menu::before {
+    top: 35%;
+  }
+  header .burger-menu::after {
+    bottom: 35%;
+  }
+  header .burger-menu.active::before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 47%;
+  }
+  header .burger-menu.active::after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: 47%;
+  }
+  header .header-menu {
+    display: none;
+    z-index: 2;
+    background-color: var(--background-color);
+    width: 688px;
+    position: absolute;
+    top: 7em;
+    left: 5.2%;
+  }
+  header .header-menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header-menu ul a {
+    font-size: 32px;
+    line-height: 125%;
+  }
+  header .header-menu.active {
+    display: block;
+  }
+  header .menu-header {
+    left: 20%;
+    top: 22em;
+    background-color: var(--background-color);
+    z-index: 2;
+    left: 5%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .menu-header a {
+    font-size: 32px;
+    line-height: 125%;
+  }
+  main .enjoy {
+    padding: 100px 60px;
+    max-width: 688px;
+    background-repeat: no-repeat;
+    height: 644px;
+    position: relative;
+  }
+}
