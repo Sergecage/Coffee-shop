@@ -906,6 +906,7 @@ footer .footer-grid-menu {
     position: relative;
     background-size: cover;
     top: -1.6em;
+    background-position: center;
   }
   main .enjoy.active {
     top: 35em;
@@ -1038,5 +1039,42 @@ footer .footer-grid-menu {
   }
   footer .footer-grid .footer-contacts {
     top: 2.2em;
+  }
+}
+@media screen and (max-width: 380px) {
+  header .burger-menu {
+    left: 22%;
+  }
+  header .header-menu {
+    width: 348px;
+  }
+  main .enjoy {
+    padding: 60px 16px;
+    margin: 0 1em;
+    max-width: 348px;
+    background-position: center;
+  }
+  main .enjoy h1 {
+    font-size: 42px;
+    line-height: 115%;
+    max-width: 316px;
+  }
+  main .enjoy .text {
+    max-width: 316px;
+  }
+  section .sub-heading {
+    max-width: 348px;
+    font-size: 32px;
+  }
+  section .favorite-coffee {
+    padding: 0 1em;
+  }
+  section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .coffee-scroll .arrow-right {
+    display: none;
+  }
+  section .favorite-coffee .coffee-scroll .drinks {
+    max-width: 348px;
+    position: relative;
+    left: -10em;
   }
 }

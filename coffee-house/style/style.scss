@@ -757,6 +757,7 @@ footer{
             position: relative;
             background-size: cover;
             top: -1.6em;
+            background-position: center;
             &.active{
                 top: 35em;
             }
@@ -885,5 +886,47 @@ footer{
 }
 
 @media  screen and (max-width: 380px) {
-
+    header{
+        .burger-menu{
+            left: 22%;
+        }
+        .header-menu{
+            width: 348px;
+        }
+    }
+    main{
+        .enjoy{
+            padding: 60px 16px;
+            margin: 0 1em;
+            max-width: 348px;
+            background-position: center;
+            h1{
+                font-size: 42px;
+                line-height: 115%;
+                max-width: 316px;
+            }
+            .text{
+                max-width: 316px;
+            }
+        }
+    }
+    section{
+        .sub-heading{
+            max-width: 348px;
+            font-size: 32px;
+        }
+        .favorite-coffee{
+            padding: 0 1em;
+            .coffee-scroll{
+                .arrow-left, .arrow-right{
+                    display: none;
+                }
+                .drinks{
+                    max-width: 348px;
+                    position: relative;
+                    left: -10em;
+                }
+            }
+        }
+    }
 }
