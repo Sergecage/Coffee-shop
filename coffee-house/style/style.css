@@ -25,6 +25,7 @@ body {
   font-family: "inter", sans-serif;
   color: var(--main-font-color);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -1066,6 +1067,9 @@ footer .footer-grid-menu {
     max-width: 348px;
     font-size: 32px;
   }
+  section .text {
+    max-width: 316px;
+  }
   section .favorite-coffee {
     padding: 0 1em;
   }
@@ -1075,6 +1079,6 @@ footer .footer-grid-menu {
   section .favorite-coffee .coffee-scroll .drinks {
     max-width: 348px;
     position: relative;
-    left: -10em;
+    left: -12em;
   }
 }
