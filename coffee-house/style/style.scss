@@ -23,6 +23,7 @@ body{
     font-family: "inter", sans-serif;
     color: var(--main-font-color);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 h1{
@@ -915,6 +916,9 @@ footer{
             max-width: 348px;
             font-size: 32px;
         }
+        .text{
+            max-width: 316px;
+        }
         .favorite-coffee{
             padding: 0 1em;
             .coffee-scroll{
@@ -924,9 +928,12 @@ footer{
                 .drinks{
                     max-width: 348px;
                     position: relative;
-                    left: -10em;
+                    left: -12em;
                 }
             }
+        }
+        .img-grid{
+            
         }
     }
 }
