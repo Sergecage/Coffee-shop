@@ -716,6 +716,7 @@ footer{
             position: absolute;
             top: 7em;
             left: 5.2%;
+            height: 35em;
             ul{
                 flex-direction: column;
                 gap: 60px;
@@ -766,6 +767,9 @@ footer{
                 &::after{
                     content: url(../img/icons/coffee-cup.svg);
                 }
+                &:hover{
+                    background: var(--background-color);
+                }
             }
         }
     }
@@ -804,8 +808,16 @@ footer{
                             &:nth-child(n + 5){
                                 display: none;
                             }
+                            &:hover{
+                                img{
+                                    transform: scale(100%);
+                                }
+                            }
                         }
                     }
+                }
+                &.active{
+                    top: 35em;
                 }
             }
         }
@@ -819,7 +831,13 @@ footer{
                     .item1{
                         background-repeat: no-repeat;
                         position: relative;
-                        left: -20em;
+                        left: 0;
+                        width: 50%;
+                    }
+                    li{
+                        &:hover{
+                            transform: scale(100%);
+                        }
                     }
                     .item2{
                         display: none;
@@ -829,10 +847,16 @@ footer{
                     .item2{
                         background-repeat: no-repeat;
                         position: relative;
-                        left: -20em;
+                        left: 0;
+                        width: 50%;
                     }
                     .item1{
                         display: none;
+                    }
+                    li{
+                        &:hover{
+                            transform: scale(100%);
+                        }
                     }
                 }
             }
@@ -951,6 +975,29 @@ footer{
                     max-width: 348px;
                 }
             }
+            &.menu{
+                top: -1.8em;
+                .sub-heading-menu{
+                    max-width: 348px;
+                    font-size: 32px;
+                    height: 120px;
+                }
+                .btn-menu{
+                    left: 0;
+                }
+                .menu-container{
+                    max-width: 310px;
+                    left: 1em;
+                    .coffee-list{
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+        }
+        .refresh{
+            left: 11%;
+            margin-bottom: 2em;
+            margin-top: 1em;
         }
         .about{
             margin: 100px 1em 0 1em;
