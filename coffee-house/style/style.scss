@@ -785,6 +785,11 @@ footer{
             }
             .coffee-scroll{
                 left: -18.2em;
+                .arrow-left, .arrow-right{
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
                 .drinks{
                     width: 480px;
                 }
@@ -866,6 +871,13 @@ footer{
             top: 5.8em;
             .sub-heading{
                 text-align: left;
+            }
+            .btn-app{
+                .btn-apps{
+                    &:hover{
+                        background: var(--light-font-color);
+                    }
+                }
             }
             .mobile-img{
                 left: 1.5em;
