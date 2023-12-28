@@ -932,6 +932,9 @@ footer .footer-grid-menu {
   section .favorite-coffee .coffee-scroll {
     left: -18.2em;
   }
+  section .favorite-coffee .coffee-scroll .arrow-left:hover, section .favorite-coffee .coffee-scroll .arrow-right:hover {
+    background-color: transparent;
+  }
   section .favorite-coffee .coffee-scroll .drinks {
     width: 480px;
   }
@@ -1007,6 +1010,9 @@ footer .footer-grid-menu {
   }
   section .mobile-app .sub-heading {
     text-align: left;
+  }
+  section .mobile-app .btn-app .btn-apps:hover {
+    background: var(--light-font-color);
   }
   section .mobile-app .mobile-img {
     left: 1.5em;
