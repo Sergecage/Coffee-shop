@@ -862,6 +862,7 @@ footer .footer-grid-menu {
     position: absolute;
     top: 7em;
     left: 5.2%;
+    height: 35em;
   }
   header .header-menu ul {
     -webkit-box-orient: vertical;
@@ -915,6 +916,9 @@ footer .footer-grid-menu {
   main .enjoy .btn-primary::after {
     content: url(../img/icons/coffee-cup.svg);
   }
+  main .enjoy .btn-primary:hover {
+    background: var(--background-color);
+  }
   .sub-heading {
     max-width: 688px;
     text-align: center;
@@ -957,6 +961,13 @@ footer .footer-grid-menu {
   section .favorite-coffee.menu .menu-container ul li:nth-child(n+5) {
     display: none;
   }
+  section .favorite-coffee.menu .menu-container ul li:hover img {
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
+  }
+  section .favorite-coffee.menu.active {
+    top: 35em;
+  }
   section .about .sub-heading {
     text-align: left;
   }
@@ -967,7 +978,12 @@ footer .footer-grid-menu {
   section .about .img-grid .col-1 .item1 {
     background-repeat: no-repeat;
     position: relative;
-    left: -20em;
+    left: 0;
+    width: 50%;
+  }
+  section .about .img-grid .col-1 li:hover {
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
   }
   section .about .img-grid .col-1 .item2 {
     display: none;
@@ -975,10 +991,15 @@ footer .footer-grid-menu {
   section .about .img-grid .col-2 .item2 {
     background-repeat: no-repeat;
     position: relative;
-    left: -20em;
+    left: 0;
+    width: 50%;
   }
   section .about .img-grid .col-2 .item1 {
     display: none;
+  }
+  section .about .img-grid .col-2 li:hover {
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
   }
   section .mobile-app {
     max-width: 100%;
@@ -1096,6 +1117,30 @@ footer .footer-grid-menu {
   }
   section .favorite-coffee .coffee-text .text {
     max-width: 348px;
+  }
+  section .favorite-coffee.menu {
+    top: -1.8em;
+  }
+  section .favorite-coffee.menu .sub-heading-menu {
+    max-width: 348px;
+    font-size: 32px;
+    height: 120px;
+  }
+  section .favorite-coffee.menu .btn-menu {
+    left: 0;
+  }
+  section .favorite-coffee.menu .menu-container {
+    max-width: 310px;
+    left: 1em;
+  }
+  section .favorite-coffee.menu .menu-container .coffee-list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  section .refresh {
+    left: 11%;
+    margin-bottom: 2em;
+    margin-top: 1em;
   }
   section .about {
     margin: 100px 1em 0 1em;
