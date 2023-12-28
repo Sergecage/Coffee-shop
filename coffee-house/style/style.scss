@@ -888,6 +888,9 @@ footer{
 
 @media  screen and (max-width: 380px) {
     header{
+        .logo-container{
+            margin: 1.2em 0 0 1em;
+        }
         .burger-menu{
             left: 22%;
         }
@@ -901,6 +904,7 @@ footer{
             margin: 0 1em;
             max-width: 348px;
             background-position: center;
+            top: -1.8em;
             h1{
                 font-size: 42px;
                 line-height: 115%;
@@ -921,6 +925,7 @@ footer{
         }
         .favorite-coffee{
             padding: 0 1em;
+            margin-top: 75px;
             .coffee-scroll{
                 .arrow-left, .arrow-right{
                     display: none;
@@ -929,11 +934,82 @@ footer{
                     max-width: 348px;
                     position: relative;
                     left: -12em;
+                    ul{
+                        .drink-item{
+                            img{
+                                width: 348px;
+                                height: 348px;
+                            }
+                        }
+                    }
+                }
+            }
+            .coffee-text{
+                width: 348px;
+                left: -0.4em;
+                .text{
+                    max-width: 348px;
                 }
             }
         }
-        .img-grid{
-            
+        .about{
+            margin: 100px 1em 0 1em;
+            .sub-heading{
+                top: 1em;
+            }
+            .img-grid{
+                .col-1{
+                    .item1{
+                        position: relative;
+                        width: 25%;
+                        left: 0;
+                    }
+                }
+                .col-2{
+                    .item2{
+                        position: relative;
+                        width: 25%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .mobile-app{
+            margin: 0 1em;
+            .mobile-text{
+                .btn-app{
+                    flex-direction: column;
+                    .btn-apps{
+                        background: var(--light-font-color);
+                    }
+                }
+            }
+            .mobile-img{
+                left: 0;
+                width: 10%;
+                top: 7em;
+                img{
+                    width: 348px;
+                    height: 348px;
+                }
+            }
+        }
+    }
+    footer{
+        margin: 0 1em;
+        top: 18.9em;
+        .footer-grid{
+            padding: 60px 16px;
+            width: 348px;
+            .footer-icons{
+                .sub-heading{
+                    max-width: 316px;
+                    font-size: 32px;
+                }
+            }
+            .footer-contacts{
+                top: -1.2em;
+            }
         }
     }
 }

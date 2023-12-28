@@ -1043,6 +1043,9 @@ footer .footer-grid-menu {
   }
 }
 @media screen and (max-width: 380px) {
+  header .logo-container {
+    margin: 1.2em 0 0 1em;
+  }
   header .burger-menu {
     left: 22%;
   }
@@ -1054,6 +1057,7 @@ footer .footer-grid-menu {
     margin: 0 1em;
     max-width: 348px;
     background-position: center;
+    top: -1.8em;
   }
   main .enjoy h1 {
     font-size: 42px;
@@ -1072,6 +1076,7 @@ footer .footer-grid-menu {
   }
   section .favorite-coffee {
     padding: 0 1em;
+    margin-top: 75px;
   }
   section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .coffee-scroll .arrow-right {
     display: none;
@@ -1080,5 +1085,68 @@ footer .footer-grid-menu {
     max-width: 348px;
     position: relative;
     left: -12em;
+  }
+  section .favorite-coffee .coffee-scroll .drinks ul .drink-item img {
+    width: 348px;
+    height: 348px;
+  }
+  section .favorite-coffee .coffee-text {
+    width: 348px;
+    left: -0.4em;
+  }
+  section .favorite-coffee .coffee-text .text {
+    max-width: 348px;
+  }
+  section .about {
+    margin: 100px 1em 0 1em;
+  }
+  section .about .sub-heading {
+    top: 1em;
+  }
+  section .about .img-grid .col-1 .item1 {
+    position: relative;
+    width: 25%;
+    left: 0;
+  }
+  section .about .img-grid .col-2 .item2 {
+    position: relative;
+    width: 25%;
+    left: 0;
+  }
+  section .mobile-app {
+    margin: 0 1em;
+  }
+  section .mobile-app .mobile-text .btn-app {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section .mobile-app .mobile-text .btn-app .btn-apps {
+    background: var(--light-font-color);
+  }
+  section .mobile-app .mobile-img {
+    left: 0;
+    width: 10%;
+    top: 7em;
+  }
+  section .mobile-app .mobile-img img {
+    width: 348px;
+    height: 348px;
+  }
+  footer {
+    margin: 0 1em;
+    top: 18.9em;
+  }
+  footer .footer-grid {
+    padding: 60px 16px;
+    width: 348px;
+  }
+  footer .footer-grid .footer-icons .sub-heading {
+    max-width: 316px;
+    font-size: 32px;
+  }
+  footer .footer-grid .footer-contacts {
+    top: -1.2em;
   }
 }
