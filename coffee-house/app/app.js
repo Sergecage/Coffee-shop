@@ -15,5 +15,5 @@ const activeBurger = () => {
 menuButton.addEventListener("click", activeBurger);
 
 let makeItemList = () => {
-
+    return (menuItems.innerHTML = coffeeItem)
 };
