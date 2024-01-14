@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee House</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src="app/app.js" async></script>
+    <script type="module" src="app/app.js" async></script>
     <script src="app/index.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,9 @@
             <div class="logo-container">
                 <a href="index.html"><img src="img/icons/logo.svg" alt="logo"></a>
             </div>
+            <div class="burger-menu">
+                <span></span>
+            </div>
             <nav class="header-menu">
                 <ul>
                     <li><a href="#favorite-coffee">Favorite coffee</a></li>
@@ -29,10 +32,10 @@
                     <li><a href="#mobile-app">Mobile app</a></li>
                     <li><a href="#contact">Contact us</a></li>
                 </ul>
+                <div class="menu-header menu">
+                    <a href="menu.html">Menu<img src="img/icons/coffee-cup.svg" alt="coffee-cup"></a>
+                </div>
             </nav>
-            <div class="menu-header menu">
-                <a href="menu.html">Menu<img src="img/icons/coffee-cup.svg" alt="coffee-cup"></a>
-            </div>
         </header>
         <section>
             <div class="favorite-coffee menu" id="favorite-coffee">
@@ -50,106 +53,164 @@
                 </div>
                 <div class="menu-container">
                     <ul class="coffee-list" id="coffee-list">
-                        <li><img src="img/pictures/coffee-1.svg" alt="coffee-drink">
+                        <li class="item" data-id="0"><img src="img/pictures/coffee-0.svg" alt="coffee-drink">
                             <div class="item-text">
                                 <h3 class="h3-heading">Irish coffee</h3>
                             <p class="text">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
                             <h3 class="h3-heading price">$7.00</h3></div></li>
-                        <li><img src="img/pictures/coffee-2.svg" alt="coffee-drink">
+                        <li class="item" data-id="1"><img src="img/pictures/coffee-1.svg" alt="coffee-drink">
                             <div class="item-text">
                                 <h3 class="h3-heading">Kahlua coffee</h3>
                             <p class="text">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
                             <h3 class="h3-heading price">$7.00</h3></div></li>
-                        <li><img src="img/pictures/coffee-3.svg" alt="coffee-drink">
+                        <li class="item" data-id="2"><img src="img/pictures/coffee-2.svg" alt="coffee-drink">
                             <div class="item-text"><h3 class="h3-heading">Honey raf</h3>
                                 <p class="text">Espresso with frothed milk, cream and aromatic honey</p>
                                 <h3 class="h3-heading price">$5.50</h3></div></li>
-                        <li><img src="img/pictures/coffee-4.svg" alt="coffee-drink">
+                        <li class="item" data-id="3"><img src="img/pictures/coffee-3.svg" alt="coffee-drink">
                             <div class="item-text">
                                 <h3 class="h3-heading">Ice cappuccino</h3>
                             <p class="text">Cappuccino with soft thick foam in summer version with ice</p>
                             <h3 class="h3-heading price">$5.00</h3>
                             </div></li>
-                        <li><img src="img/pictures/coffee-5.svg" alt="coffee-drink">
+                        <li class="item" data-id="4"><img src="img/pictures/coffee-4.svg" alt="coffee-drink">
                             <div class="item-text">
                                 <h3 class="h3-heading">Espresso</h3>
                             <p class="text">Classic black coffee</p>
                             <h3 class="h3-heading price">$4.50</h3>
                             </div></li>
-                        <li><img src="img/pictures/coffee-6.svg" alt="coffee-drink">
+                        <li class="item" data-id="5"><img src="img/pictures/coffee-5.svg" alt="coffee-drink">
                             <div class="item-text">
                                 <h3 class="h3-heading">Latte</h3>
                             <p class="text">Espresso coffee with the addition of steamed milk and dense milk foam</p>
                             <h3 class="h3-heading price">$5.50</h3>
                             </div></li>
-                        <li><img src="img/pictures/coffee-7.svg" alt="coffee-drink">
+                        <li class="item" data-id="6"><img src="img/pictures/coffee-6.svg" alt="coffee-drink">
                             <div class="item-text"><h3 class="h3-heading">Latte macchiato</h3>
                                 <p class="text">Espresso with frothed milk and chocolate</p>
                                 <h3 class="h3-heading price">$5.50</h3></div></li>
-                        <li><img src="img/pictures/coffee-8.svg" alt="coffee-drink">
+                        <li class="item" data-id="7"><img src="img/pictures/coffee-7.svg" alt="coffee-drink">
                             <div class="item-text"><h3 class="h3-heading">Coffee with cognac</h3>
                                 <p class="text">Fragrant black coffee with cognac and whipped cream</p>
                                 <h3 class="h3-heading price">$6.50</h3></div></li>
                     </ul>
                     <ul class="tea-list" id="tea-list">
-                        <li><img src="img/pictures/tea-1.svg" alt="tea-drink">
+                        <li class="item" data-id="8"><img src="img/pictures/tea-8.svg" alt="tea-drink">
                             <h3 class="h3-heading">Moroccan</h3>
                             <p class="text">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
                             <h3 class="h3-heading">$4.50</h3></li>
-                        <li><img src="img/pictures/tea-2.svg" alt="tea-drink">
+                        <li class="item" data-id="9"><img src="img/pictures/tea-9.svg" alt="tea-drink">
                             <h3 class="h3-heading">Ginger</h3>
                             <p class="text">Original black tea with fresh ginger, lemon and honey</p>
                             <h3 class="h3-heading">$5.00</h3></li>
-                        <li><img src="img/pictures/tea-3.svg" alt="tea-drink">
+                        <li class="item" data-id="10"><img src="img/pictures/tea-10.svg" alt="tea-drink">
                             <h3 class="h3-heading">Cranberry</h3>
                             <p class="text">Invigorating black tea with cranberry and honey</p>
                             <h3 class="h3-heading">$5.00</h3></li>
-                        <li><img src="img/pictures/tea-4.svg" alt="tea-drink">
+                        <li class="item" data-id="11"><img src="img/pictures/tea-11.svg" alt="tea-drink">
                             <h3 class="h3-heading">Sea buckthorn</h3>
                             <p class="text">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
                             <h3 class="h3-heading">$5.50</h3></li>
                     </ul>
                     <ul class="dessert-list" id="dessert-list">
-                        <li><img src="img/pictures/dessert-1.svg" alt="dessert">
+                        <li class="item" data-id="12"><img src="img/pictures/dessert-12.svg" alt="dessert">
                             <h3 class="h3-heading">Marble cheesecake</h3>
                             <p class="text">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
                             <h3 class="h3-heading">$3.50</h3></li>
-                        <li><img src="img/pictures/dessert-2.svg" alt="dessert">
+                        <li class="item" data-id="13"><img src="img/pictures/dessert-13.svg" alt="dessert">
                             <h3 class="h3-heading">Red velvet</h3>
                             <p class="text">Layer cake with cream cheese frosting</p>
                             <h3 class="h3-heading">$4.00</h3></li>
-                        <li><img src="img/pictures/dessert-3.svg" alt="dessert">
+                        <li class="item" data-id="14"><img src="img/pictures/dessert-14.svg" alt="dessert">
                             <h3 class="h3-heading">Cheesecakes</h3>
                             <p class="text">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
                             <h3 class="h3-heading">$4.50</h3></li>
-                        <li><img src="img/pictures/dessert-4.svg" alt="dessert">
+                        <li class="item" data-id="15"><img src="img/pictures/dessert-15.svg" alt="dessert">
                             <h3 class="h3-heading">Creme brulee</h3>
                             <p class="text">Delicate creamy dessert in a caramel basket with wild berries</p>
                             <h3 class="h3-heading">$4.00</h3></li>
-                        <li><img src="img/pictures/dessert-5.svg" alt="dessert">
+                        <li class="item" data-id="16"><img src="img/pictures/dessert-16.svg" alt="dessert">
                             <h3 class="h3-heading">Pancakes</h3>
                             <p class="text">Tender pancakes with strawberry jam and fresh strawberries</p>
                             <h3 class="h3-heading">$4.50</h3></li>
-                        <li><img src="img/pictures/dessert-6.svg" alt="dessert">
+                        <li class="item" data-id="17"><img src="img/pictures/dessert-17.svg" alt="dessert">
                             <h3 class="h3-heading">Honey cake</h3>
                             <p class="text">Classic honey cake with delicate custard</p>
                             <h3 class="h3-heading">$4.50</h3></li>
-                        <li><img src="img/pictures/dessert-7.svg" alt="dessert">
+                        <li class="item" data-id="18"><img src="img/pictures/dessert-18.svg" alt="dessert">
                             <h3 class="h3-heading">Chocolate cake</h3>
                             <p class="text">Cake with hot chocolate filling and nuts with dried apricots</p>
                             <h3 class="h3-heading">$5.50</h3></li>
-                        <li><img src="img/pictures/dessert-8.svg" alt="dessert">
+                        <li class="item" data-id="19"><img src="img/pictures/dessert-19.svg" alt="dessert">
                             <h3 class="h3-heading">Black forest</h3>
                             <p class="text">A combination of thin sponge cake with cherry jam and light chocolate mousse</p>
                             <h3 class="h3-heading">$6.50</h3></li>
                     </ul>
                 </div>
             </div>
+            <div class="refresh">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            </div>
+            <div class="choosen">
+                <div class="choosen-item">
+                    <div class="item-img"><img src="img/pictures/coffee-0.svg" alt="item"></div>
+                    <div class="choosen-body">
+                        <h3 class="h3-heading">Irish coffee</h3>
+                        <p class="text">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                        <div class="sizes">
+                            <h4 class="item-title">Size</h4>
+                            <div class="item-sizes">
+                                <div class="item-size active">
+                                    <div class="size-name"></div>
+                                <div class="size-value">200 ml</div>
+                                </div>
+                                <div class="item-size">
+                                    <div class="size-name"></div>
+                                <div class="size-value">300 ml</div>
+                                </div>
+                                <div class="item-size">
+                                    <div class="size-name"></div>
+                                <div class="size-value">400 ml</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="additives">
+                            <h4 class="item-title">Additives</h4>
+                            <div class="item-sizes">
+                                <div class="item-size">
+                                    <div class="size-name"></div>
+                                <div class="size-value">Sugar</div>
+                                </div>
+                                <div class="item-size">
+                                    <div class="size-name"></div>
+                                <div class="size-value">Cinnamon</div>
+                                </div>
+                                <div class="item-size">
+                                    <div class="size-name"></div>
+                                <div class="size-value">Syrup</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-line">
+                            <h3 class="h3-heading">Total:</h3>
+                            <div class="price">$7.00</div>
+                        </div>
+                        <div class="alert">
+                            <div class="alert-icon">i</div>
+                            <p class="alert-text">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+                        </div>
+                        <div class="close-btn">Close</div>
+                    </div>
+                </div>
+            </div>
         </section>
         <footer class="footer-menu">
             <div class="footer-grid">
                 <nav class="footer-icons">
-                    <h2 class="sub-heading">Sip, Savor, Smile. <span class="accent">It’s coffee time!</span></h2>
+                    <h2 class="sub-heading">Sip, Savor, Smile.<br><span class="accent">It’s coffee time!</span></h2>
                     <ul>
                         <li><a class="social"><img src="img/icons/twitter.svg" alt="twitter"></a></li>
                         <li><a class="social"><img src="img/icons/instagram.svg" alt="instagram"></a></li>
