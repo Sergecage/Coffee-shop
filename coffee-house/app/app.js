@@ -4,9 +4,14 @@ const navMenu = document.querySelector('.header-menu');
 const enjoySection = document.querySelector('.enjoy');
 const  menuSection = document.querySelector('.favorite-coffee, .menu');
 const selectedItem = document.querySelector('.choosen');
-const selectedContent = document.querySelector('.item');
+const selectedContent = document.querySelector('.menu-container');
 const closeBtn = document.querySelector(".close-btn");
 const itemImg = document.querySelector(".item-img");
+const itemName = document.querySelector(".h3-heading");
+const itemText = document.querySelector(".text");
+const itemSizes = document.querySelector(".sizes .item-sizes");
+const itemAdditive = document.querySelector(".additives .item-sizes");
+const itemPrice = document.querySelector(".price");
 const items = menuItems.map((item, id = 0) => {
     item.id = id++;
     return {...item}
@@ -28,19 +33,47 @@ const activeBurger = () => {
 }
 menuButton.addEventListener("click", activeBurger);
 
+//click menu item
+const chooseItem = (elem) => {
+    if (elem.target.closest(".item")) {
+        const itemId = elem.target.closest(".item").dataset.id;
+        currentItem = items.find((item) => item.id == itemId);
+        totalPrice = + currentItem.price;
+        selectItem()
+    }
+}
 //menu item selection
 const selectItem = () => {
     selectedItem.classList.add('active');
     document.body.style.background = "#403F3DCC";
     document.body.style.overflow = "hidden";
+    generateItem();
 }
 
+//generate content for modal
 const generateItem = () => {
-    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.jpg" alt="item"`;
+    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt="item"`;
+    itemName.textContent = currentItem.name;
+    itemText.textContent = currentItem.description;
+    for (let i = 0; i < itemSizes.children.length; i++) {
+        const size = itemSizes.children[i].dataset.size;
+        itemSizes.children[i].querySelector(".size-value").textContent = currentItem.sizes[size].size;
+    }
+    for (let i = 0; i < itemAdditive.children.length; i++) {
+        const additive = itemAdditive.children[i].dataset.add;
+        itemAdditive.children[i].querySelector(".size-value").textContent = currentItem.additives[additive].name;
+    }
+    totalPrice = currentItem.price;
+    itemPrice.textContent = `$${getPrice()}`;
 }
 
-selectedContent.addEventListener('click', selectItem);
+selectedContent.addEventListener('click', chooseItem);
+//update price
 
+const getPrice = () => {
+
+}
+//close item card
 const closeItem = () => {
     selectedItem.classList.remove('active');
     document.body.style.overflow = 'auto';
@@ -50,7 +83,3 @@ const closeItem = () => {
 closeBtn.addEventListener("click", closeItem);
 
 
-
-let makeItemList = () => {
-    return (menuItems.innerHTML = coffeeItem)
-};
