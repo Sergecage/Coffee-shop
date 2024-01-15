@@ -50,9 +50,15 @@ const selectItem = () => {
     generateItem();
 }
 
+const createItem = (item) => {
+    const itemCard = document.createElement('div');
+    itemCard.className = "item";
+    itemCard.dataset.id = item.id;
+}
+
 //generate content for modal
 const generateItem = () => {
-    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt="item"`;
+    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt="coffee-drink"`;
     itemName.textContent = currentItem.name;
     itemText.textContent = currentItem.description;
     for (let i = 0; i < itemSizes.children.length; i++) {
