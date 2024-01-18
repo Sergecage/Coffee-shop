@@ -22,7 +22,6 @@ let totalPrice = 0;
 let sizePrice = 0;
 let additivePrice =0;
 
-let card = JSON.parse(localStorage.getItem("data")) || [];
 
 //burger animation
 const activeBurger = () => {
@@ -116,27 +115,38 @@ itemSizes.addEventListener('click', updateSize);
 const updateAdditive = (el) => {
     const targetSize = el.target.closest(".item-size");
     if (targetSize) {
-        clickSizeBtn(targetSize);
+        clickAdditive(targetSize);
         const add = targetSize.dataset.add;
         const addPrice = currentItem.additives[add]["add-price"];
         if (targetSize.classList.contains('active')){
-            sizePrice += addPrice;
-            itemPrice.textContent = `$${getFullPrice()}`;
+            additivePrice += addPrice;
+            itemPrice.textContent = `$${getPrice()}`;
         } else {
-            sizePrice -= addPrice;
-            itemPrice.textContent = `$${getFullPrice()}`;
+            additivePrice -= addPrice;
+            itemPrice.textContent = `$${getPrice()}`;
         }
     }
 }
+itemAdditive.addEventListener('click', updateAdditive);
 
 //click on size or additive
-const clickSizeBtn = () => {
+const clickSizeBtn = (ele) => {
+    for ( let i = 0; i < itemSizes.children.length; i++) {
+        itemSizes.children[i].classList.remove('active');
+    }
+    ele.classList.add('active');
+}
 
+const clickAdditive = (ele) => {
+    if(ele) {
+        ele.classList.toggle("active");
+    }
 }
 
 //update price
 const getPrice = () => {
-
+    const fullPrice = +totalPrice + +additivePrice + +sizePrice;
+    return fullPrice.toFixed(2).toString();
 }
 //close item card
 const closeItem = () => {
