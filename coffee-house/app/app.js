@@ -50,9 +50,29 @@ const selectItem = () => {
     generateItem();
 }
 
+const createItem = (item) => {
+    const itemCard = document.createElement('li');
+    itemCard.className = "item";
+    itemCard.dataset.id = item.id;
+    const itmImg = document.createElement("img");
+    itmImg.className = "itm-img";
+    itmImg.innerHTML = `<img src="../img/pictures/${item.category}-${item.id}.svg alt="coffee-drink">`;
+    const itmText = document.createElement("div");
+    itmText.className = "item-text";
+    const itmName = document.createElement("h3");
+    itmName.classList = "h3-heading";
+    const itmText2 = document.createElement("p");
+    itmText2.classList = "text";
+    const itmSubName = document.createElement("h3");
+    itmSubName.classList = "h3-heading price";
+    itmText.append(itmName, itmText2, itmSubName);
+    itemCard.append(itmImg, itmText);
+    return itemCard;
+}
+
 //generate content for modal
 const generateItem = () => {
-    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt="item"`;
+    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt=""`;
     itemName.textContent = currentItem.name;
     itemText.textContent = currentItem.description;
     for (let i = 0; i < itemSizes.children.length; i++) {
