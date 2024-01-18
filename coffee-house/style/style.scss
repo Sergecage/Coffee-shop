@@ -134,35 +134,46 @@ header{
 
 main{
     .enjoy{
-        background: url(../img/pictures/img-hero.svg);
+        background: url(../img/pictures/video.mp4);
         background-size: 100%;
-        margin: 0 2.2em 0 2.5em;
         border-radius: 40px;
         padding: 100px;
-        flex-direction: column;
+        .enjoy-text{
+            margin: 0 2.2em 0 2.5em;
+            flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         align-self: stretch;
         display: flex;
-        h1{
-            position: relative;
-            align-self: stretch;
-            width: 530px;
-        }
-        .text{
-            color: var(--light-font-color);
-            width: 530px;
-            margin-top: 40px;
-        }
-        .btn-primary{
-            padding: 20px 78px;
-            justify-content: center;
-            background: var(--background-color);
-            border: none;
-            margin-top: 40px;
-            &:hover::after{
-                content: url(../img/icons/coffee-cup.svg);
+            h1{
+                position: relative;
+                align-self: stretch;
+                width: 530px;
             }
+            .text{
+                color: var(--light-font-color);
+                width: 530px;
+                margin-top: 40px;
+            }
+            .btn-primary{
+                padding: 20px 78px;
+                justify-content: center;
+                background: var(--background-color);
+                border: none;
+                margin-top: 40px;
+                &:hover::after{
+                    content: url(../img/icons/coffee-cup.svg);
+                }
+            }
+        }
+        video{
+            object-fit: cover;
+            z-index: -1;
+            border-radius: 40px;
+            position: absolute;
+            width: 100%;
+            height: 65%;
+            top: 6em;
         }
     }
 }
@@ -616,6 +627,9 @@ section{
                                     height: 17px;
                                     top: 50%;
                                     left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    background-repeat: no-repeat;
+                                    color: var(--main-font-color);
                                 }
                             }
                             &:hover{
@@ -851,11 +865,11 @@ footer{
             }
             &.active{
                 &::before{
-                    transform: rotate(45deg);
+                    transform: rotateX(45deg);
                     top: 47%;
                 }
                 &::after{
-                    transform: rotate(-45deg);
+                    transform: rotateX(-45deg);
                     bottom: 47%;
                 }
             }

@@ -4,7 +4,7 @@ const navMenu = document.querySelector('.header-menu');
 const enjoySection = document.querySelector('.enjoy');
 const  menuSection = document.querySelector('.favorite-coffee, .menu');
 const selectedItem = document.querySelector('.choosen');
-const selectedContent = document.querySelector('.menu-container');
+const selectedContent = document.querySelector('.coffee-list');
 const closeBtn = document.querySelector(".close-btn");
 const itemImg = document.querySelector(".item-img");
 const itemName = document.querySelector(".h3-heading");
@@ -70,6 +70,17 @@ const createItem = (item) => {
     return itemCard;
 }
 
+const generateItemCard = (el) => {
+    let cards = [];
+    for ( let i = 0; i < el.length; i++) {
+        if (items[i].el == el) {
+            cards.push(createItem(items[i]));
+        }
+    }
+    return cards;
+}
+
+
 //generate content for modal
 const generateItem = () => {
     itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt=""`;
@@ -88,8 +99,42 @@ const generateItem = () => {
 }
 
 selectedContent.addEventListener('click', chooseItem);
-//update price
+//update size
+const updateSize = (el) => {
+    const targetSize = el.target.closest(".item-size");
+    if (targetSize) {
+        clickSizeBtn(targetSize);
+        const size = targetSize.dataset.size;
+        const addPrice = currentItem.sizes[size]["add-price"];
+        sizePrice = addPrice;
+        itemPrice.textContent = `$${getFullPrice()}`;
+    }
+}
 
+itemSizes.addEventListener('click', updateSize);
+//update additive
+const updateAdditive = (el) => {
+    const targetSize = el.target.closest(".item-size");
+    if (targetSize) {
+        clickSizeBtn(targetSize);
+        const add = targetSize.dataset.add;
+        const addPrice = currentItem.additives[add]["add-price"];
+        if (targetSize.classList.contains('active')){
+            sizePrice += addPrice;
+            itemPrice.textContent = `$${getFullPrice()}`;
+        } else {
+            sizePrice -= addPrice;
+            itemPrice.textContent = `$${getFullPrice()}`;
+        }
+    }
+}
+
+//click on size or additive
+const clickSizeBtn = () => {
+
+}
+
+//update price
 const getPrice = () => {
 
 }
@@ -100,6 +145,13 @@ const closeItem = () => {
     document.body.style.background = "#E1D4C9";
 }
 
+const closeNearItem = (el) => {
+    if (!el.target.closest(".item")) {
+        closeItem();
+    }
+}
+
 closeBtn.addEventListener("click", closeItem);
+selectedItem.addEventListener("click", closeNearItem);
 
 

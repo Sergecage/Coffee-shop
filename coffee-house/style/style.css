@@ -139,11 +139,13 @@ header .menu-header.menu a:hover {
 }
 
 main .enjoy {
-  background: url(../img/pictures/img-hero.svg);
+  background: url(../img/pictures/video.mp4);
   background-size: 100%;
-  margin: 0 2.2em 0 2.5em;
   border-radius: 40px;
   padding: 100px;
+}
+main .enjoy .enjoy-text {
+  margin: 0 2.2em 0 2.5em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -161,19 +163,19 @@ main .enjoy {
   display: -ms-flexbox;
   display: flex;
 }
-main .enjoy h1 {
+main .enjoy .enjoy-text h1 {
   position: relative;
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
   width: 530px;
 }
-main .enjoy .text {
+main .enjoy .enjoy-text .text {
   color: var(--light-font-color);
   width: 530px;
   margin-top: 40px;
 }
-main .enjoy .btn-primary {
+main .enjoy .enjoy-text .btn-primary {
   padding: 20px 78px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -182,8 +184,18 @@ main .enjoy .btn-primary {
   border: none;
   margin-top: 40px;
 }
-main .enjoy .btn-primary:hover::after {
+main .enjoy .enjoy-text .btn-primary:hover::after {
   content: url(../img/icons/coffee-cup.svg);
+}
+main .enjoy video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  border-radius: 40px;
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  top: 6em;
 }
 
 section .favorite-coffee {
@@ -779,6 +791,10 @@ section .choosen .choosen-item .choosen-body .sizes .item-sizes .item-size .size
   height: 17px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  color: var(--main-font-color);
 }
 section .choosen .choosen-item .choosen-body .sizes .item-sizes .item-size:hover, section .choosen .choosen-item .choosen-body .additives .item-sizes .item-size:hover {
   cursor: pointer;
@@ -1073,13 +1089,13 @@ footer .footer-grid-menu {
     bottom: 35%;
   }
   header .burger-menu.active::before {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -webkit-transform: rotateX(45deg);
+            transform: rotateX(45deg);
     top: 47%;
   }
   header .burger-menu.active::after {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    -webkit-transform: rotateX(-45deg);
+            transform: rotateX(-45deg);
     bottom: 47%;
   }
   header .header-menu {
