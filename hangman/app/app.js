@@ -22,16 +22,39 @@ const createGame = () => {
 
     const startBtns = document.createElement("div")
     startBtns.className = "start-button";
-    header.append(startBtns)
-    const start = document.createElement("div")
+    header.append(startBtns);
+    const start = document.createElement("div");
     start.className = "start-game";
     start.innerHTML = "Start Game";
-    const restart = document.createElement("div")
+    const restart = document.createElement("div");
     restart.className = "start-again";
     restart.innerHTML = "Reset Game";
     startBtns.append(start, restart);
 
-    
+    const game = document.createElement("section");
+    game.className = "game-gallows"
+    const form = document.createElement("section");
+    form.className = "game-forms"
+    main.append(game, form);
+
+    const gallow = document.createElement("div");
+    gallow.className = "game-gallows-lines";
+    const hangman = document.createElement("div");
+    hangman.className = "game-gallows-hagmans";
+    const title = document.createElement("div");
+    title.className = "game-gallows-title";
+    title.innerHTML = "Hagman Game";
+    game.append(gallow, hangman, title);
+
+    const vertical = document.createElement("div");
+    vertical.className = "vertical";
+    const horizontal = document.createElement("div");
+    horizontal.className = "horizontal";
+    const declined = document.createElement("div");
+    declined.className = "declined";
+    const hang = document.createElement("div");
+    hang.className = "hang";
+    gallow.append(vertical, horizontal, declined, hang);
 
     for ( let i = 97; i <= 122; i++) {
         const letter = document.createElement("div");
