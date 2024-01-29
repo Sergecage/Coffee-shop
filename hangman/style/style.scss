@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Oswald&display=swap');
+
+body{
+    font-family: 'Oswald', sans-serif;
+    background-color: rgba(100, 153, 214, 0.678);
+}
+
+.container{
+    margin: auto;
+    width: 1440px;
+}
+
+.header{
+    font-family: 'Honk', system-ui;
+    font-weight: 400;
+    line-height: 2em;
+    font-size: 5em;
+    padding: 0 2em 0 2em;
+    .start-button{
+        display: flex;
+        gap: 3em;
+        .start-game, .start-again{
+            cursor: pointer;
+            &:hover{
+                transform: scale(110%);
+            }
+        }
+    }
+}
+
+.game{
+    display: flex;
+    gap: 3em;
+    margin-left: 5%;
+    .game-gallows{
+        font-weight: 400;
+        font-size: 3.5em;
+        .game-gallows-lines{
+            .vertical, .horizontal, .declined, .hang {
+                background-color: black;
+                position: relative;
+                border: 0.05em solid rgb(59, 50, 185);
+            }
+            .vertical{
+                width: 0.5em;
+                height: 8em;
+                left: 0.2em;
+                z-index: 1;
+            }
+            .horizontal{
+                width: 8em;
+                height: 0.5em;
+                top: -7.9em;
+                z-index: 1;
+            }
+            .declined{
+                width: 2.5em;
+                height: 0.5em;
+                transform: rotate(-45deg);
+                top: -7.6em;
+            }
+            .hang{
+                width: 0.1em;
+                height: 1em;
+                top: -8.5em;
+                left: 7em;
+            }
+        }
+        .game-gallows-hagmans{
+            position: relative;
+            top: -8.5em;
+            left: 6.2em;
+            .torso, .arm-left, .arm-right, .leg-left, .leg-right{
+                position: absolute;
+            }
+            .torso{
+                top: 1.8em;
+                left: 0.9em;
+            }
+            .arm-left{
+                left: -0.2em;
+            }
+            .leg-left{
+                top: 3em;
+                left: -0.2em;
+            }
+            .arm-right{
+                left: 0.9em;
+            }
+            .leg-right{
+                left: 0.9em;
+                top: 3em;
+            }
+        }
+        .game-gallows-title{
+            position: relative;
+            top: -4.4em;
+            &::before{
+                display: block;
+                content: "";
+                width: 9.5em;
+                height: 0.5em;
+                background-color: black;
+            }
+        }
+    }
+    .game-forms {
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .game-form{
+            font-size: 2em;
+            padding-top: 1em;
+            .game-form-letters{
+                display: flex;
+                gap: 0.5em;
+                list-style: none;
+                .game-form-letter{
+                    width: 1.5em;
+                    border-bottom: 0.2em solid black;
+                }
+            }
+            .game-form-hint, .game-form-counter {
+                margin-left: 1em;
+            }
+        }
+        .keyboard{
+            display: flex;
+            gap: 0.5em;
+            font-size: 1.5em;
+            flex-wrap: wrap;
+            .letter{
+                background-color: aliceblue;
+                width: 2em;
+                height: 2em;
+                margin: 0 auto;
+                text-align: center;
+                text-transform: uppercase;
+                box-shadow: 5px 5px 5px rgb(197, 93, 93);
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(178, 212, 212);
+                }
+                &.right{
+                    background-color: rgb(45, 110, 28);
+                }
+                &.wrong{
+                    background-color: rgb(201, 57, 81);
+                }
+            }
+        }
+    }
+}
+
+@media screen {
+    
+}

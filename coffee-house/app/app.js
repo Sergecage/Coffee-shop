@@ -49,6 +49,13 @@ const selectItem = () => {
     generateItem();
 }
 
+//select next category
+const selectNextCat = (ele) => {
+    if (ele.target.classList.contains('active')) {
+        
+    }
+}
+
 const createItem = (item) => {
     const itemCard = document.createElement('li');
     itemCard.className = "item";
