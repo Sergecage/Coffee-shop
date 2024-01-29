@@ -74,6 +74,9 @@ body{
             .torso, .arm-left, .arm-right, .leg-left, .leg-right{
                 position: absolute;
             }
+            .head{
+                height: 0.8em;
+            }
             .torso{
                 top: 1.8em;
                 left: 0.9em;
@@ -95,7 +98,7 @@ body{
         }
         .game-gallows-title{
             position: relative;
-            top: -4.4em;
+            top: -3em;
             &::before{
                 display: block;
                 content: "";
@@ -119,12 +122,21 @@ body{
                 gap: 0.5em;
                 list-style: none;
                 .game-form-letter{
+                    font-size: 1.5em;
                     width: 1.5em;
                     border-bottom: 0.2em solid black;
+                    &.right{
+                        border: none;
+                    }
                 }
             }
             .game-form-hint, .game-form-counter {
                 margin-left: 1em;
+            }
+            .game-form-counter{
+                span{
+                    color: rgb(81, 19, 197);
+                }
             }
         }
         .keyboard{

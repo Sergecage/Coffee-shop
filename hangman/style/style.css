@@ -80,6 +80,9 @@ body {
 .game .game-gallows .game-gallows-hagmans .torso, .game .game-gallows .game-gallows-hagmans .arm-left, .game .game-gallows .game-gallows-hagmans .arm-right, .game .game-gallows .game-gallows-hagmans .leg-left, .game .game-gallows .game-gallows-hagmans .leg-right {
   position: absolute;
 }
+.game .game-gallows .game-gallows-hagmans .head {
+  height: 0.8em;
+}
 .game .game-gallows .game-gallows-hagmans .torso {
   top: 1.8em;
   left: 0.9em;
@@ -100,7 +103,7 @@ body {
 }
 .game .game-gallows .game-gallows-title {
   position: relative;
-  top: -4.4em;
+  top: -3em;
 }
 .game .game-gallows .game-gallows-title::before {
   display: block;
@@ -137,11 +140,18 @@ body {
   list-style: none;
 }
 .game .game-forms .game-form .game-form-letters .game-form-letter {
+  font-size: 1.5em;
   width: 1.5em;
   border-bottom: 0.2em solid black;
 }
+.game .game-forms .game-form .game-form-letters .game-form-letter.right {
+  border: none;
+}
 .game .game-forms .game-form .game-form-hint, .game .game-forms .game-form .game-form-counter {
   margin-left: 1em;
+}
+.game .game-forms .game-form .game-form-counter span {
+  color: rgb(81, 19, 197);
 }
 .game .game-forms .keyboard {
   display: -webkit-box;
