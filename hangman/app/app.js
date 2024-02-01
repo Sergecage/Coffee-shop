@@ -1,7 +1,6 @@
 import words from "./data.js";
 const body = document.querySelector('#body');
 
-const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 const hangman = ['<circle cx="50.5" cy="50.5" r="48" fill="grey" stroke="#909090" stroke-width="5"/>',
 '<rect width="5" height="131" fill="#909090"/>', '<rect x="63.7964" width="5" height="100" transform="rotate(39.64 63.7964 0)" fill="#909090"/>',
 '<rect y="3.18951" width="5" height="100" transform="rotate(-39.6353 0 3.18951)" fill="#909090"/>', 
@@ -88,9 +87,9 @@ const createGame = () => {
     counter.append(counterCheck);
     gameForm.append(gameLetter, hints, counter);
 
-    const letter = document.createElement("li");
-    letter.className = "game-form-letter";
-    gameLetter.append(letter);
+    const letterGuessed = document.createElement("li");
+    letterGuessed.className = "game-form-letter";
+    gameLetter.append(letterGuessed);
 
     const headSvg = document.createElement("svg");
     headSvg.setAttribute('width', 101);
@@ -178,9 +177,32 @@ const createGame = () => {
     legRightRec.setAttribute('fill', "#909090");
     legRightSvg.append(legRightRec);
 
+    const modalWin = document.createElement("div");
+    modalWin.className = "modal-win";
+    const modalLost = document.createElement("div");
+    modalLost.className = "modal-lose";
+    header.append(modalWin, modalLost);
+    const heading = document.createElement("h2");
+    heading.innerHTML = "You won!";
+    const restartWin = document.createElement("div");
+    restartWin.className = "restart";
+    restartWin.innerHTML = "Restart game";
+    const imageWon = document.createElement("img")
+    imageWon.src = "./img/Hangman.jpg";
+    modalWin.append(heading, restartWin, imageWon);
+    const headingLost = document.createElement("h2");
+    headingLost.innerHTML = "You lost!";
+    const restartGame = document.createElement("div");
+    restartGame.className = "restart";
+    restartGame.innerHTML= "restart game";
+    const imageLost = document.createElement("img");
+    imageLost.src = "./img/Hangmanlost.jpg";
+    modalLost.append(headingLost, restartGame, imageLost);
+
 
     let startingWord;
     let wrongGuess = 0;
+    let correctLetters = [];
     const totalGuesses = 6;
 
     //choose a word
@@ -192,27 +214,42 @@ const createGame = () => {
     }
     getWord();
 
+    const endOfGame = () => {
+        modalLost.style.display = "flex";
+    }
+
+    const endOfGameWin = () => {
+        modalWin.style.display = "flex";
+    }
+
     const startGame = (letter, clicked) => {
         if (startingWord.includes(clicked)) {
+            letter.classList.add("right");
             [...startingWord].forEach((letter, index) => {
                 if ( letter === clicked) {
+                    correctLetters.push(letter);
                     gameLetter.querySelectorAll("li")[index].innerText = letter;
                     gameLetter.querySelectorAll("li")[index].classList.add("right");
                 }
             })
         } else{
             wrongGuess++;
+            letter.classList.add("wrong");
         }
         counterCheck.innerText = `${wrongGuess} / ${totalGuesses}`;
+
+        if (wrongGuess === totalGuesses) return endOfGame();
+        if (correctLetters.length === startingWord.length) return endOfGameWin();
     }
 
     for ( let i = 97; i <= 122; i++) {
-        const letter = document.createElement("div");
-        letter.innerText = String.fromCharCode(i);
-        letter.className = "letter";
-        keyboard.append(letter);
-        letter.addEventListener('click', e => startGame(e.target, String.fromCharCode(i)));
+        const letterBTN = document.createElement("div");
+        letterBTN.innerText = String.fromCharCode(i);
+        letterBTN.className = "letter";
+        keyboard.append(letterBTN);
+        letterBTN.addEventListener('click', e => startGame(e.target, String.fromCharCode(i)));
     }
+
 }
 
 createGame();
