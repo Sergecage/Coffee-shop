@@ -30,6 +30,45 @@ body {
   -webkit-transform: scale(110%);
           transform: scale(110%);
 }
+.header .modal-win, .header .modal-lose {
+  position: absolute;
+  background-color: rgba(21, 48, 199, 0.9607843137);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 10%;
+  display: none;
+  top: 0;
+}
+.header .modal-win h2, .header .modal-lose h2 {
+  margin: 0;
+  text-transform: uppercase;
+}
+.header .modal-win .restart, .header .modal-lose .restart {
+  cursor: pointer;
+}
+.header .modal-win .restart:hover, .header .modal-lose .restart:hover {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  opacity: 0.6;
+}
+.header .modal-win img, .header .modal-lose img {
+  max-width: 6em;
+  height: 5em;
+}
 
 .game {
   display: -webkit-box;
@@ -178,7 +217,11 @@ body {
 }
 .game .game-forms .keyboard .letter.right {
   background-color: rgb(45, 110, 28);
+  opacity: 0.8;
+  pointer-events: none;
 }
 .game .game-forms .keyboard .letter.wrong {
   background-color: rgb(201, 57, 81);
+  opacity: 0.8;
+  pointer-events: none;
 }
