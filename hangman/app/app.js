@@ -215,6 +215,8 @@ const createGame = () => {
         modalWin.style.display = "none";
         gameLetter.querySelectorAll("li").forEach((el) => el.classList.remove("right"));
         gameLetter.innerHTML = startingWord.split("").map(() => `<li class="game-form-letter"></li>`).join('');
+        keyboard.querySelectorAll("div").forEach((el) => el.classList.remove("right"));
+        keyboard.querySelectorAll("div").forEach((el) => el.classList.remove("wrong"));
     }
 
     //choose a word
