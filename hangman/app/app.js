@@ -187,17 +187,19 @@ const createGame = () => {
     const restartWin = document.createElement("div");
     restartWin.className = "restart";
     restartWin.innerHTML = "Restart game";
+    const secretWordWin = document. createElement('h4');
     const imageWon = document.createElement("img")
     imageWon.src = "./img/Hangman.jpg";
-    modalWin.append(heading, restartWin, imageWon);
+    modalWin.append(heading, restartWin,secretWordWin, imageWon);
     const headingLost = document.createElement("h2");
     headingLost.innerHTML = "You lost!";
     const restartGame = document.createElement("div");
     restartGame.className = "restart";
     restartGame.innerHTML= "restart game";
+    const secretWord = document. createElement('h4');
     const imageLost = document.createElement("img");
     imageLost.src = "./img/Hangmanlost.jpg";
-    modalLost.append(headingLost, restartGame, imageLost);
+    modalLost.append(headingLost, restartGame, secretWord, imageLost);
 
 
     let startingWord;
@@ -205,22 +207,35 @@ const createGame = () => {
     let correctLetters = [];
     const totalGuesses = 6;
 
+    const resetGame = () => {
+        let wrongGuess = 0;
+        let correctLetters = [];
+        modalLost.style.display = "none";
+        modalWin.style.display = "none";
+        
+        gameLetter.querySelectorAll("li").forEach((el) => el.classList.remove("right"));
+    }
+
     //choose a word
     const getWord = () => {
         const {word, hint} = words[Math.floor(Math.random() * words.length)];
         startingWord = word;
         hints.innerText = hint;
+        resetGame();
         gameLetter.innerHTML = word.split("").map(() => `<li class="game-form-letter"></li>`).join('');
     }
     getWord();
 
     const endOfGame = () => {
         modalLost.style.display = "flex";
+        secretWord.innerHTML = "The secret word was: " + `${startingWord}`;
     }
 
     const endOfGameWin = () => {
         modalWin.style.display = "flex";
+        secretWordWin.innerHTML = "The secret word was: " + `${startingWord}`;
     }
+
 
     const startGame = (letter, clicked) => {
         if (startingWord.includes(clicked)) {
@@ -249,6 +264,8 @@ const createGame = () => {
         keyboard.append(letterBTN);
         letterBTN.addEventListener('click', e => startGame(e.target, String.fromCharCode(i)));
     }
+
+    restart.addEventListener("click", getWord);
 
 }
 
