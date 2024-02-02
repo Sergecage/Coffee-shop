@@ -208,12 +208,13 @@ const createGame = () => {
     const totalGuesses = 6;
 
     const resetGame = () => {
-        let wrongGuess = 0;
-        let correctLetters = [];
+        wrongGuess = 0;
+        correctLetters = [];
+        counterCheck.innerText = `${wrongGuess} / ${totalGuesses}`;
         modalLost.style.display = "none";
         modalWin.style.display = "none";
-        
         gameLetter.querySelectorAll("li").forEach((el) => el.classList.remove("right"));
+        gameLetter.innerHTML = startingWord.split("").map(() => `<li class="game-form-letter"></li>`).join('');
     }
 
     //choose a word
@@ -222,7 +223,6 @@ const createGame = () => {
         startingWord = word;
         hints.innerText = hint;
         resetGame();
-        gameLetter.innerHTML = word.split("").map(() => `<li class="game-form-letter"></li>`).join('');
     }
     getWord();
 
@@ -266,6 +266,8 @@ const createGame = () => {
     }
 
     restart.addEventListener("click", getWord);
+    restartWin.addEventListener('click', getWord);
+    restartGame.addEventListener("click", getWord);
 
 }
 
