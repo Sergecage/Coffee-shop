@@ -129,16 +129,6 @@ body {
   width: 2em;
   display: none;
 }
-.game .game-gallows .game-gallows-hagmans .head svg {
-  width: 2em;
-  height: 1.8em;
-  display: block;
-}
-.game .game-gallows .game-gallows-hagmans .head svg circle {
-  width: auto;
-  height: auto;
-  display: block;
-}
 .game .game-gallows .game-gallows-hagmans .torso {
   top: 1.8em;
   left: 0.9em;
@@ -243,4 +233,58 @@ body {
   background-color: rgb(201, 57, 81);
   opacity: 0.8;
   pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header .modal-win, .header .modal-lose {
+    left: 25%;
+    top: 2%;
+  }
+  .game {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.2em;
+  }
+  .game .game-gallows {
+    padding-left: 4em;
+  }
+  .game .game-forms .keyboard {
+    max-width: 22em;
+  }
+}
+@media screen and (max-width: 368px) {
+  .header .modal-win, .header .modal-lose {
+    left: 50%;
+    top: 8%;
+    width: 12em;
+  }
+  .header .modal-win img, .header .modal-lose img {
+    max-width: 3em;
+    height: 3em;
+  }
+  .game {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.2em;
+  }
+  .game .game-gallows {
+    padding-left: 4em;
+  }
+  .game .game-forms .game-form .game-form-letters .game-form-letter {
+    font-size: 1.5em;
+  }
+  .game .game-forms .game-form .game-form-hint, .game .game-forms .game-form .game-form-counter {
+    font-size: 2.5em;
+  }
+  .game .game-forms .keyboard {
+    max-width: 40em;
+  }
+  .game .game-forms .keyboard .letter {
+    width: 4.5em;
+    height: 4.5em;
+  }
 }
