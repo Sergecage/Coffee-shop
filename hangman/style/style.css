@@ -41,7 +41,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1em;
+  padding: 0.2em;
   width: 70%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -64,6 +64,10 @@ body {
   -webkit-transform: scale(110%);
           transform: scale(110%);
   opacity: 0.6;
+}
+.header .modal-win h4, .header .modal-lose h4 {
+  font-size: 0.5em;
+  margin: 0;
 }
 .header .modal-win img, .header .modal-lose img {
   max-width: 6em;
