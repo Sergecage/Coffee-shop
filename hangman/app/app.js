@@ -97,91 +97,6 @@ const createGame = () => {
     letterGuessed.className = "game-form-letter";
     gameLetter.append(letterGuessed);
 
-    /*const headSvg = document.createElement("svg");
-    headSvg.setAttribute('width', 101);
-    headSvg.setAttribute('height', 101);
-    headSvg.setAttribute('fill', "none");
-    head.append(headSvg);
-    const circle = document.createElement("circle");
-    circle.setAttribute('cx', 45);
-    circle.setAttribute('cy', 45);
-    circle.setAttribute('r', 38);
-    circle.setAttribute('width', 60);
-    circle.setAttribute('height', 60);
-    circle.setAttribute('fill', "grey");
-    circle.setAttribute('stroke', "#000000");
-    circle.setAttribute('stroke-width', 5);
-    headSvg.append(circle);
-
-    const torsoSvg = document.createElement("svg");
-    torsoSvg.setAttribute('width', 5);
-    torsoSvg.setAttribute('height', 131);
-    torsoSvg.setAttribute('viewBox', "0 0 68 81");
-    torsoSvg.setAttribute('fill', "none");
-    torso.append(torsoSvg);
-    const torsoRec = document.createElement("rect");
-    torsoRec.setAttribute('x', 63.7964);
-    torsoRec.setAttribute('transform', "rotate(39.64 63.7964 0)");
-    torsoRec.setAttribute('width', 5);
-    torsoRec.setAttribute('height', 100);
-    torsoRec.setAttribute('fill', "#909090");
-    torsoSvg.append(torsoRec);
-
-    const armLeftSvg = document.createElement("svg");
-    armLeftSvg.setAttribute('width', 68);
-    armLeftSvg.setAttribute('height', 81);
-    armLeftSvg.setAttribute('viewBox', "0 0 68 81");
-    armLeftSvg.setAttribute('fill', "none");
-    leftArm.append(armLeftSvg);
-    const armLeftRec = document.createElement("rect");
-    armLeftRec.setAttribute('x', 63.7964);
-    armLeftRec.setAttribute('transform', "rotate(-39.6353 0 3.18951)");
-    armLeftRec.setAttribute('width', 5);
-    armLeftRec.setAttribute('height', 100);
-    armLeftRec.setAttribute('fill', "#909090");
-    armLeftSvg.append(armLeftRec);
-    
-    const armRightSvg = document.createElement("svg");
-    armRightSvg.setAttribute('width', 68);
-    armRightSvg.setAttribute('height', 81);
-    armRightSvg.setAttribute('viewBox', "0 0 68 81");
-    armRightSvg.setAttribute('fill', "none");
-    rightArm.append(armRightSvg);
-    const armRightRec = document.createElement("rect");
-    armRightRec.setAttribute('x', 63.7964);
-    armRightRec.setAttribute('transform', "rotate(-39.6353 0 3.18951)");
-    armRightRec.setAttribute('width', 5);
-    armRightRec.setAttribute('height', 100);
-    armRightRec.setAttribute('fill', "#909090");
-    armRightSvg.append(armRightRec);
-
-    const legLeftSvg = document.createElement("svg");
-    legLeftSvg.setAttribute('width', 68);
-    legLeftSvg.setAttribute('height', 81);
-    legLeftSvg.setAttribute('viewBox', "0 0 68 81");
-    legLeftSvg.setAttribute('fill', "none");
-    leftLeg.append(legLeftSvg);
-    const legLeftRec = document.createElement("rect");
-    legLeftRec.setAttribute('x', 63.7964);
-    legLeftRec.setAttribute('transform', "rotate(39.64 63.7964 0)");
-    legLeftRec.setAttribute('width', 5);
-    legLeftRec.setAttribute('height', 100);
-    legLeftRec.setAttribute('fill', "#909090");
-    legLeftSvg.append(legLeftRec);
-
-    const legRightSvg = document.createElement("svg");
-    legRightSvg.setAttribute('width', 68);
-    legRightSvg.setAttribute('height', 81);
-    legRightSvg.setAttribute('viewBox', "0 0 68 81");
-    legRightSvg.setAttribute('fill', "none");
-    rightLeg.append(legRightSvg);
-    const legRightRec = document.createElement("rect");
-    legRightRec.setAttribute('x', 63.7964);
-    legRightRec.setAttribute('transform', "rotate(39.64 63.7964 0)");
-    legRightRec.setAttribute('width', 5);
-    legRightRec.setAttribute('height', 100);
-    legRightRec.setAttribute('fill', "#909090");
-    legRightSvg.append(legRightRec);*/
 
     const modalWin = document.createElement("div");
     modalWin.className = "modal-win";
@@ -223,6 +138,12 @@ const createGame = () => {
         gameLetter.innerHTML = startingWord.split("").map(() => `<li class="game-form-letter"></li>`).join('');
         keyboard.querySelectorAll("div").forEach((el) => el.classList.remove("right"));
         keyboard.querySelectorAll("div").forEach((el) => el.classList.remove("wrong"));
+        head.style.display = "none";
+        torso.style.display = "none";
+            leftArm.style.display = "none";
+            rightArm.style.display = "none";
+            leftLeg.style.display = "none";
+            rightLeg.style.display = "none";
     }
 
     //choose a word
@@ -234,14 +155,6 @@ const createGame = () => {
     }
     getWord();
 
-    const addParts = (el) => {
-        const div = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
-        div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg">'+el+'</svg>';
-        const frag = document.createDocumentFragment();
-        while (div.firstChild.firstChild)
-        frag.appendChild(div.firstChild.firstChild);
-    return frag;
-    }
 
     const endOfGame = () => {
         modalLost.style.display = "flex";
@@ -267,7 +180,6 @@ const createGame = () => {
         } else{
             wrongGuess++;
             letter.classList.add("wrong");
-            hangmanParts.appendChild(addParts(hangman[wrongGuess]));
         }
         counterCheck.innerText = `${wrongGuess} / ${totalGuesses}`;
 
@@ -306,6 +218,7 @@ const createGame = () => {
             leftLeg.style.display = "block";
             rightLeg.style.display = "block";
         } 
+        
     }
 
     for ( let i = 97; i <= 122; i++) {

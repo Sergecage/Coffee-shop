@@ -113,16 +113,6 @@ body{
                 height: 2em;
                 width: 2em;
                 display: none;
-                svg{
-                    width: 2em;
-                    height: 1.8em;
-                    display: block;
-                    circle{
-                        width: auto;
-                        height: auto;
-                        display: block;
-                    }
-                }
             }
             .torso{
                 top: 1.8em;
@@ -220,6 +210,63 @@ body{
     }
 }
 
-@media screen {
-    
+@media screen  and (max-width: 768px) {
+    .header{
+        .modal-win, .modal-lose{
+            left: 25%;
+            top: 2%;
+        }
+    }
+    .game{
+        flex-direction: column;
+        gap: 0.2em;
+        .game-gallows{
+            padding-left: 4em;
+        }
+        .game-forms{
+            .keyboard{
+                max-width: 22em;
+            }
+        }
+    }
+}
+
+@media screen  and (max-width: 368px) {
+    .header{
+        .modal-win, .modal-lose{
+            left: 50%;
+            top: 8%;
+            width: 12em;
+            img{
+                max-width: 3em;
+                height: 3em;
+            }
+        }
+    }
+    .game{
+        flex-direction: column;
+        gap: 0.2em;
+        .game-gallows{
+            padding-left: 4em;
+        }
+        .game-forms{
+            .game-form{
+                .game-form-letters{
+                    .game-form-letter{
+                        font-size: 1.5em;
+                    }
+                }
+                .game-form-hint, .game-form-counter{
+                    font-size: 2.5em;
+                }
+            }
+            .keyboard{
+                max-width: 40em;
+                .letter{
+                    width: 4.5em;
+                    height: 4.5em;
+                }
+            }
+        }
+    }
 }
