@@ -122,9 +122,22 @@ body {
 }
 .game .game-gallows .game-gallows-hagmans .torso, .game .game-gallows .game-gallows-hagmans .arm-left, .game .game-gallows .game-gallows-hagmans .arm-right, .game .game-gallows .game-gallows-hagmans .leg-left, .game .game-gallows .game-gallows-hagmans .leg-right {
   position: absolute;
+  display: none;
 }
 .game .game-gallows .game-gallows-hagmans .head {
-  height: 0.8em;
+  height: 2em;
+  width: 2em;
+  display: none;
+}
+.game .game-gallows .game-gallows-hagmans .head svg {
+  width: 2em;
+  height: 1.8em;
+  display: block;
+}
+.game .game-gallows .game-gallows-hagmans .head svg circle {
+  width: auto;
+  height: auto;
+  display: block;
 }
 .game .game-gallows .game-gallows-hagmans .torso {
   top: 1.8em;
@@ -132,6 +145,7 @@ body {
 }
 .game .game-gallows .game-gallows-hagmans .arm-left {
   left: -0.2em;
+  top: 1.7em;
 }
 .game .game-gallows .game-gallows-hagmans .leg-left {
   top: 3em;
@@ -139,6 +153,7 @@ body {
 }
 .game .game-gallows .game-gallows-hagmans .arm-right {
   left: 0.9em;
+  top: 1.7em;
 }
 .game .game-gallows .game-gallows-hagmans .leg-right {
   left: 0.9em;
