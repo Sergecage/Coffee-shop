@@ -37,12 +37,12 @@ const createGame = () => {
 
     const gallow = document.createElement("div");
     gallow.className = "game-gallows-lines";
-    const hangman = document.createElement("div");
-    hangman.className = "game-gallows-hagmans";
+    const hangmanParts = document.createElement("div");
+    hangmanParts .className = "game-gallows-hagmans";
     const title = document.createElement("div");
     title.className = "game-gallows-title";
     title.innerHTML = "Hagman Game";
-    game.append(gallow, hangman, title);
+    game.append(gallow, hangmanParts , title);
 
     const vertical = document.createElement("div");
     vertical.className = "vertical";
@@ -54,19 +54,25 @@ const createGame = () => {
     hang.className = "hang";
     gallow.append(vertical, horizontal, declined, hang);
 
-    const head = document.createElement('div');
+    const head = document.createElement('img');
     head.className = "head";
-    const torso = document.createElement('div');
+    head.src = './img/head.svg';
+    const torso = document.createElement('img');
     torso.className = "torso";
-    const leftArm = document.createElement('div');
+    torso.src = './img/body.svg';
+    const leftArm = document.createElement('img');
     leftArm.className = "arm-left";
-    const rightArm = document.createElement('div');
+    leftArm.src = './img/hand-one.svg';
+    const rightArm = document.createElement('img');
     rightArm.className = "arm-right";
-    const leftLeg = document.createElement('div');
+    rightArm.src = "./img/hand-two.svg";
+    const leftLeg = document.createElement('img');
     leftLeg.className = "leg-left";
-    const rightLeg = document.createElement('div');
+    leftLeg.src = './img/leg-one.svg';
+    const rightLeg = document.createElement('img');
     rightLeg.className = "leg-right";
-    hangman.append(head, torso, leftArm, rightArm, leftLeg, rightLeg);
+    rightLeg.src = './img/leg-two.svg';
+    hangmanParts.append(head, torso, leftArm, rightArm, leftLeg, rightLeg);
 
     const gameForm = document.createElement("div");
     gameForm.className = "game-form";
@@ -91,7 +97,7 @@ const createGame = () => {
     letterGuessed.className = "game-form-letter";
     gameLetter.append(letterGuessed);
 
-    const headSvg = document.createElement("svg");
+    /*const headSvg = document.createElement("svg");
     headSvg.setAttribute('width', 101);
     headSvg.setAttribute('height', 101);
     headSvg.setAttribute('fill', "none");
@@ -175,7 +181,7 @@ const createGame = () => {
     legRightRec.setAttribute('width', 5);
     legRightRec.setAttribute('height', 100);
     legRightRec.setAttribute('fill', "#909090");
-    legRightSvg.append(legRightRec);
+    legRightSvg.append(legRightRec);*/
 
     const modalWin = document.createElement("div");
     modalWin.className = "modal-win";
@@ -228,6 +234,15 @@ const createGame = () => {
     }
     getWord();
 
+    const addParts = (el) => {
+        const div = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+        div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg">'+el+'</svg>';
+        const frag = document.createDocumentFragment();
+        while (div.firstChild.firstChild)
+        frag.appendChild(div.firstChild.firstChild);
+    return frag;
+    }
+
     const endOfGame = () => {
         modalLost.style.display = "flex";
         secretWord.innerHTML = "The secret word was: " + `${startingWord}`;
@@ -252,11 +267,45 @@ const createGame = () => {
         } else{
             wrongGuess++;
             letter.classList.add("wrong");
+            hangmanParts.appendChild(addParts(hangman[wrongGuess]));
         }
         counterCheck.innerText = `${wrongGuess} / ${totalGuesses}`;
 
         if (wrongGuess === totalGuesses) return endOfGame();
         if (correctLetters.length === startingWord.length) return endOfGameWin();
+        if (wrongGuess === 1) {
+            head.style.display = "block";
+        } 
+        if (wrongGuess === 2) {
+            head.style.display = "block";
+            torso.style.display = "block";
+        } 
+        if (wrongGuess === 3) {
+            head.style.display = "block";
+            torso.style.display = "block";
+            leftArm.style.display = "block";
+        } 
+        if (wrongGuess === 4) {
+            head.style.display = "block";
+            torso.style.display = "block";
+            leftArm.style.display = "block";
+            rightArm.style.display = "block";
+        } 
+        if (wrongGuess === 5) {
+            head.style.display = "block";
+            torso.style.display = "block";
+            leftArm.style.display = "block";
+            rightArm.style.display = "block";
+            leftLeg.style.display = "block";
+        } 
+        if (wrongGuess === 6) {
+            head.style.display = "block";
+            torso.style.display = "block";
+            leftArm.style.display = "block";
+            rightArm.style.display = "block";
+            leftLeg.style.display = "block";
+            rightLeg.style.display = "block";
+        } 
     }
 
     for ( let i = 97; i <= 122; i++) {

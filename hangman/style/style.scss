@@ -107,9 +107,22 @@ body{
             left: 6.2em;
             .torso, .arm-left, .arm-right, .leg-left, .leg-right{
                 position: absolute;
+                display: none;
             }
             .head{
-                height: 0.8em;
+                height: 2em;
+                width: 2em;
+                display: none;
+                svg{
+                    width: 2em;
+                    height: 1.8em;
+                    display: block;
+                    circle{
+                        width: auto;
+                        height: auto;
+                        display: block;
+                    }
+                }
             }
             .torso{
                 top: 1.8em;
@@ -117,6 +130,7 @@ body{
             }
             .arm-left{
                 left: -0.2em;
+                top: 1.7em
             }
             .leg-left{
                 top: 3em;
@@ -124,6 +138,7 @@ body{
             }
             .arm-right{
                 left: 0.9em;
+                top: 1.7em
             }
             .leg-right{
                 left: 0.9em;
