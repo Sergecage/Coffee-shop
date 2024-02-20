@@ -227,7 +227,27 @@ const createGame = () => {
         letterBTN.className = "letter";
         keyboard.append(letterBTN);
         letterBTN.addEventListener('click', e => startGame(e.target, String.fromCharCode(i)));
+        letterBTN.addEventListener('keydown', e => startGame(e.target, String.fromCharCode(i)));
     }
+
+    let key; 
+    const checkButton = (letter, pressed) => {
+        if (startingWord.includes(pressed)) {
+            letter.classList.add("right");
+            [...startingWord].forEach((letter, index) => {
+                if ( letter === pressed) {
+                    correctLetters.push(letter);
+                    gameLetter.querySelectorAll("li")[index].innerText = letter;
+                    gameLetter.querySelectorAll("li")[index].classList.add("right");
+                }
+            })
+        } else{
+            wrongGuess++;
+            pressed =letter.classList.add("wrong");
+        }
+    }
+    
+    document.addEventListener("keydown", checkButton);
 
     restart.addEventListener("click", getWord);
     restartWin.addEventListener('click', getWord);
