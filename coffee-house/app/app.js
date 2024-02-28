@@ -6,12 +6,13 @@ const  menuSection = document.querySelector('.favorite-coffee, .menu');
 const selectedItem = document.querySelector('.choosen');
 const selectedContent = document.querySelector('.coffee-list');
 const closeBtn = document.querySelector(".close-btn");
-const itemImg = document.querySelector(".item-image");
+const itemImg = document.querySelector(".item-img");
 const itemName = document.querySelector(".choosen-name");
 const itemText = document.querySelector(".choosen-text");
 const itemSizes = document.querySelector(".sizes .item-sizes");
 const itemAdditive = document.querySelector(".additives .item-sizes");
 const itemPrice = document.querySelector(".price");
+const btnMenu = document.querySelector(".btn-menu");
 const items = menuItems.map((item, id = 0) => {
     item.id = id++;
     return {...item}
@@ -37,7 +38,7 @@ const chooseItem = (elem) => {
     if (elem.target.closest(".item")) {
         const itemId = elem.target.closest(".item").dataset.id;
         currentItem = items.find((item) => item.id == itemId);
-        totalPrice = + currentItem.price;
+        totalPrice = +currentItem.price;
         selectItem()
     }
 }
@@ -49,21 +50,42 @@ const selectItem = () => {
     generateItem();
 }
 
+const changeCategory = () => {
+    if (event.target.classList.contains("-span")) {
+        const coffeeTab = event.target;
+        if (!coffeeTab.classList.contains('active')) {
+            const cat = coffeeTab.dataset.category;
+            setActiveCat(coffeeTab);
+            uploadCards(cat);
+        }
+    }
+}
+
+const uploadCards = (elem) => {
+    selectedContent.innerHTML = '';
+    const cards = generateItemCard(elem);
+    selectedContent.append(...cards);
+    console.log(elem);
+}
+
 const createItem = (item) => {
     const itemCard = document.createElement('li');
     itemCard.className = "item";
     itemCard.dataset.id = item.id;
-    const itmImg = document.createElement("img");
-    itmImg.className = "itm-img";
+    const itmImg = document.createElement("div");
+    itmImg.className = "item-image";
     itmImg.innerHTML = `<img src="../img/pictures/${item.category}-${item.id}.svg alt="coffee-drink">`;
     const itmText = document.createElement("div");
     itmText.className = "item-text";
     const itmName = document.createElement("h3");
     itmName.classList = "h3-heading";
+    itmName.textContent = item.name;
     const itmText2 = document.createElement("p");
     itmText2.classList = "text";
+    itmText2.textContent = item.description;
     const itmSubName = document.createElement("h3");
     itmSubName.classList = "h3-heading price";
+    itmSubName.textContent = `$${item.price}`;
     itmText.append(itmName, itmText2, itmSubName);
     itemCard.append(itmImg, itmText);
     return itemCard;
@@ -82,7 +104,7 @@ const generateItemCard = (el) => {
 
 //generate content for modal
 const generateItem = () => {
-    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt=""`;
+    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt="coffee-drink"`;
     itemName.textContent = currentItem.name;
     itemText.textContent = currentItem.description;
     for (let i = 0; i < itemSizes.children.length; i++) {
@@ -127,6 +149,8 @@ const updateAdditive = (el) => {
         }
     }
 }
+
+btnMenu.addEventListener('click', changeCategory);
 itemAdditive.addEventListener('click', updateAdditive);
 
 //click on size or additive
@@ -160,6 +184,8 @@ const closeNearItem = (el) => {
         closeItem();
     }
 }
+
+uploadCards(items);
 
 closeBtn.addEventListener("click", closeItem);
 selectedItem.addEventListener("click", closeNearItem);
