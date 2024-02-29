@@ -51,7 +51,7 @@ const selectItem = () => {
 }
 
 const changeCategory = () => {
-    if (event.target.classList.contains("-span")) {
+    if (event.target.classList.contains("span")) {
         const coffeeTab = event.target;
         if (!coffeeTab.classList.contains('active')) {
             const cat = coffeeTab.dataset.category;
@@ -65,7 +65,6 @@ const uploadCards = (elem) => {
     selectedContent.innerHTML = '';
     const cards = generateItemCard(elem);
     selectedContent.append(...cards);
-    console.log(elem);
 }
 
 const createItem = (item) => {
