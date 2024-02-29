@@ -94,7 +94,7 @@ const createItem = (item) => {
 const generateItemCard = (el) => {
     let cards = [];
     for ( let i = 0; i < el.length; i++) {
-        if (items[i].el == el) {
+        if (items[i].category == el) {
             cards.push(createItem(items[i]));
         }
     }
@@ -185,7 +185,7 @@ const closeNearItem = (el) => {
     }
 }
 
-uploadCards(items);
+uploadCards("coffee");
 
 closeBtn.addEventListener("click", closeItem);
 selectedItem.addEventListener("click", closeNearItem);
