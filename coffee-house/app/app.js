@@ -73,8 +73,11 @@ const createItem = (item) => {
     itemCard.dataset.id = item.id;
     const itmImg = document.createElement("div");
     itmImg.className = "item-image";
-    itmImg.src = `../img/pictures/${item.category}-${item.id}.svg`;
-    itmImg.alt= "coffee-drink";
+    const itmImg2 = document.createElement("img");
+    itmImg2.className = "item-img";
+    itmImg2.src = `../img/pictures/${item.category}-${item.id}.svg`;
+    itmImg2.alt= "coffee-drink";
+    itmImg.append(itmImg2);
     const itmText = document.createElement("div");
     itmText.className = "item-text";
     const itmName = document.createElement("h3");
