@@ -51,7 +51,7 @@ const selectItem = () => {
 }
 
 const changeCategory = () => {
-    if (event.target.classList.contains("span")) {
+    if (event.target.classList.contains("coffee-span")) {
         const coffeeTab = event.target;
         if (!coffeeTab.classList.contains('active')) {
             const cat = coffeeTab.dataset.category;
@@ -73,7 +73,8 @@ const createItem = (item) => {
     itemCard.dataset.id = item.id;
     const itmImg = document.createElement("div");
     itmImg.className = "item-image";
-    itmImg.innerHTML = `<img src="../img/pictures/${item.category}-${item.id}.svg alt="coffee-drink">`;
+    itmImg.src = `../img/pictures/${item.category}-${item.id}.svg`;
+    itmImg.alt= "coffee-drink";
     const itmText = document.createElement("div");
     itmText.className = "item-text";
     const itmName = document.createElement("h3");
