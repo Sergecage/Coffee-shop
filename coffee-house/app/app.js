@@ -13,6 +13,7 @@ const itemSizes = document.querySelector(".sizes .item-sizes");
 const itemAdditive = document.querySelector(".additives .item-sizes");
 const itemPrice = document.querySelector(".price");
 const btnMenu = document.querySelector(".btn-menu");
+const loadMoreBtn = document.querySelector(".refresh");
 const items = menuItems.map((item, id = 0) => {
     item.id = id++;
     return {...item}
@@ -50,21 +51,40 @@ const selectItem = () => {
     generateItem();
 }
 
+const addMoreCards = () => {
+    for ( let i =0; i < selectedContent.children.length; i++) {
+        selectedContent.children[i].style.display = 'block';
+    }
+    hideMoreBtn();
+};
+
 const changeCategory = () => {
-    if (event.target.classList.contains("coffee-span")) {
+    if (event.target.classList.contains("btn-span")) {
         const coffeeTab = event.target;
         if (!coffeeTab.classList.contains('active')) {
-            const cat = coffeeTab.dataset.category;
+            const category = coffeeTab.dataset.category;
             setActiveCat(coffeeTab);
-            uploadCards(cat);
+            uploadCards(category);
         }
     }
+}
+
+const setActiveCat = (elem) => {
+    for (let i = 0;  i < btnMenu.children.length; i++) {
+        btnMenu.children[i].classList.remove('active');
+    }
+    elem.classList.add('active');
 }
 
 const uploadCards = (elem) => {
     selectedContent.innerHTML = '';
     const cards = generateItemCard(elem);
     selectedContent.append(...cards);
+    if (cards.length <= 4) {
+        hideMoreBtn();
+    } else {
+        loadMoreCardBtn();
+    }
 }
 
 const createItem = (item) => {
@@ -96,7 +116,7 @@ const createItem = (item) => {
 
 const generateItemCard = (el) => {
     let cards = [];
-    for ( let i = 0; i < el.length; i++) {
+    for ( let i = 0; i < items.length; i++) {
         if (items[i].category == el) {
             cards.push(createItem(items[i]));
         }
@@ -104,10 +124,18 @@ const generateItemCard = (el) => {
     return cards;
 }
 
+const hideMoreBtn = () => {
+    loadMoreBtn.classList.add("hide");
+};
+
+const loadMoreCardBtn = () => {
+    loadMoreBtn.classList.remove("hide");
+}
 
 //generate content for modal
 const generateItem = () => {
-    itemImg.innerHTML = `<img src="../img/pictures/${currentItem.category}-${currentItem.id}.svg" alt="coffee-drink"`;
+    itemImg.src = `../img/pictures/${currentItem.category}-${currentItem.id}.svg`;
+    itemImg.alt = "coffee-drink";
     itemName.textContent = currentItem.name;
     itemText.textContent = currentItem.description;
     for (let i = 0; i < itemSizes.children.length; i++) {
@@ -192,5 +220,6 @@ uploadCards("coffee");
 
 closeBtn.addEventListener("click", closeItem);
 selectedItem.addEventListener("click", closeNearItem);
+loadMoreBtn.addEventListener('click', addMoreCards);
 
 
