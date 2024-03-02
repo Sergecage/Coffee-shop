@@ -425,6 +425,11 @@ section{
             margin: 0;
             top: -0.5em;
         }
+        .refresh{
+            .hide{
+                display: none;
+            }
+        }
     }
     .about{
         margin: 100px 2.2em 0 2.2em;

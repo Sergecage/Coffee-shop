@@ -517,6 +517,9 @@ section .favorite-coffee.menu {
   margin: 0;
   top: -0.5em;
 }
+section .favorite-coffee .refresh .hide {
+  display: none;
+}
 section .about {
   margin: 100px 2.2em 0 2.2em;
 }
