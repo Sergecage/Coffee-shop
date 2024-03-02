@@ -378,7 +378,7 @@ section .favorite-coffee .btn-menu {
   position: relative;
   left: 2em;
 }
-section .favorite-coffee .btn-menu form button {
+section .favorite-coffee .btn-menu .btns-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -394,14 +394,14 @@ section .favorite-coffee .btn-menu form button {
   border: 1px solid var(--border-light);
   background: var(--background-color);
 }
-section .favorite-coffee .btn-menu form button span {
+section .favorite-coffee .btn-menu .btns-menu span {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
   font-family: "Inter", sans-serif;
 }
-section .favorite-coffee .btn-menu form button .coffee-span:before {
+section .favorite-coffee .btn-menu .btns-menu .coffee-span:before {
   content: url(../img/icons/cofee-cup-small.svg);
   background-color: var(--border-light);
   border-radius: 100px;
@@ -409,7 +409,7 @@ section .favorite-coffee .btn-menu form button .coffee-span:before {
   height: 24px;
   padding: 4px 7px;
 }
-section .favorite-coffee .btn-menu form button .tea-span:before {
+section .favorite-coffee .btn-menu .btns-menu .tea-span:before {
   content: url(../img/icons/kettle.svg);
   background-color: var(--border-light);
   border-radius: 100px;
@@ -419,7 +419,7 @@ section .favorite-coffee .btn-menu form button .tea-span:before {
   position: relative;
   left: -0.5em;
 }
-section .favorite-coffee .btn-menu form button .dessert-span:before {
+section .favorite-coffee .btn-menu .btns-menu .dessert-span:before {
   content: url(../img/icons/cake.svg);
   background-color: var(--border-light);
   border-radius: 100px;
@@ -427,17 +427,17 @@ section .favorite-coffee .btn-menu form button .dessert-span:before {
   height: 24px;
   padding: 3px 3px;
 }
-section .favorite-coffee .btn-menu form button:hover {
+section .favorite-coffee .btn-menu .btns-menu:hover {
   background-color: var(--border-color);
   color: var(--light-font-color);
   cursor: pointer;
 }
-section .favorite-coffee .btn-menu form button.active {
+section .favorite-coffee .btn-menu .btns-menu.active {
   background-color: var(--border-color);
   color: var(--light-font-color);
   cursor: not-allowed;
 }
-section .favorite-coffee .btn-menu form button.active:before {
+section .favorite-coffee .btn-menu .btns-menu.active:before {
   background-color: var(--border-light);
 }
 section .favorite-coffee .menu-container {

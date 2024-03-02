@@ -59,7 +59,7 @@ const addMoreCards = () => {
 };
 
 const changeCategory = () => {
-    if (event.target.classList.contains("btn-span")) {
+    if (event.target.classList.contains("btn-menu")) {
         const coffeeTab = event.target;
         if (!coffeeTab.classList.contains('active')) {
             const category = coffeeTab.dataset.category;
