@@ -50,7 +50,7 @@ const selectItem = () => {
     document.body.style.overflow = "hidden";
     generateItem();
 }
- coffee-house-week3
+
 const addMoreCards = () => {
     for ( let i =0; i < selectedContent.children.length; i++) {
         selectedContent.children[i].style.display = 'block';
@@ -87,7 +87,6 @@ const uploadCards = (elem) => {
     }
 }
 
- coffee-house
 const createItem = (item) => {
     const itemCard = document.createElement('li');
     itemCard.className = "item";
