@@ -50,23 +50,6 @@ const selectItem = () => {
     generateItem();
 }
 
-const changeCategory = () => {
-    if (event.target.classList.contains("coffee-span")) {
-        const coffeeTab = event.target;
-        if (!coffeeTab.classList.contains('active')) {
-            const cat = coffeeTab.dataset.category;
-            setActiveCat(coffeeTab);
-            uploadCards(cat);
-        }
-    }
-}
-
-const uploadCards = (elem) => {
-    selectedContent.innerHTML = '';
-    const cards = generateItemCard(elem);
-    selectedContent.append(...cards);
-}
-
 const createItem = (item) => {
     const itemCard = document.createElement('li');
     itemCard.className = "item";

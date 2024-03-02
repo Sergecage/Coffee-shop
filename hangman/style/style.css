@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Honk&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Honk&family=Oswald&display=swap");
+body {
+  font-family: "Oswald", sans-serif;
+  background-color: rgba(100, 153, 214, 0.678);
+}
+
+.container {
+  margin: auto;
+  width: 1440px;
+}
+
+.header {
+  font-family: "Honk", system-ui;
+  font-weight: 400;
+  line-height: 2em;
+  font-size: 5em;
+  padding: 0 2em 0 2em;
+}
+.header .start-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3em;
+}
+.header .start-button .start-game, .header .start-button .start-again {
+  cursor: pointer;
+}
+.header .start-button .start-game:hover, .header .start-button .start-again:hover {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+}
+.header .modal-win, .header .modal-lose {
+  position: absolute;
+  background-color: rgba(21, 48, 199, 0.9607843137);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.2em;
+  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 10%;
+  display: none;
+  top: 0;
+}
+.header .modal-win h2, .header .modal-lose h2 {
+  margin: 0;
+  text-transform: uppercase;
+}
+.header .modal-win .restart, .header .modal-lose .restart {
+  cursor: pointer;
+}
+.header .modal-win .restart:hover, .header .modal-lose .restart:hover {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  opacity: 0.6;
+}
+.header .modal-win h4, .header .modal-lose h4 {
+  font-size: 0.5em;
+  margin: 0;
+}
+.header .modal-win img, .header .modal-lose img {
+  max-width: 6em;
+  height: 5em;
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3em;
+  margin-left: 5%;
+}
+.game .game-gallows {
+  font-weight: 400;
+  font-size: 3.5em;
+}
+.game .game-gallows .game-gallows-lines .vertical, .game .game-gallows .game-gallows-lines .horizontal, .game .game-gallows .game-gallows-lines .declined, .game .game-gallows .game-gallows-lines .hang {
+  background-color: black;
+  position: relative;
+  border: 0.05em solid rgb(59, 50, 185);
+}
+.game .game-gallows .game-gallows-lines .vertical {
+  width: 0.5em;
+  height: 8em;
+  left: 0.2em;
+  z-index: 1;
+}
+.game .game-gallows .game-gallows-lines .horizontal {
+  width: 8em;
+  height: 0.5em;
+  top: -7.9em;
+  z-index: 1;
+}
+.game .game-gallows .game-gallows-lines .declined {
+  width: 2.5em;
+  height: 0.5em;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: -7.6em;
+}
+.game .game-gallows .game-gallows-lines .hang {
+  width: 0.1em;
+  height: 1em;
+  top: -8.5em;
+  left: 7em;
+}
+.game .game-gallows .game-gallows-hagmans {
+  position: relative;
+  top: -8.5em;
+  left: 6.2em;
+}
+.game .game-gallows .game-gallows-hagmans .torso, .game .game-gallows .game-gallows-hagmans .arm-left, .game .game-gallows .game-gallows-hagmans .arm-right, .game .game-gallows .game-gallows-hagmans .leg-left, .game .game-gallows .game-gallows-hagmans .leg-right {
+  position: absolute;
+  display: none;
+}
+.game .game-gallows .game-gallows-hagmans .head {
+  height: 2em;
+  width: 2em;
+  display: none;
+}
+.game .game-gallows .game-gallows-hagmans .torso {
+  top: 1.8em;
+  left: 0.9em;
+}
+.game .game-gallows .game-gallows-hagmans .arm-left {
+  left: -0.2em;
+  top: 1.7em;
+}
+.game .game-gallows .game-gallows-hagmans .leg-left {
+  top: 3em;
+  left: -0.2em;
+}
+.game .game-gallows .game-gallows-hagmans .arm-right {
+  left: 0.9em;
+  top: 1.7em;
+}
+.game .game-gallows .game-gallows-hagmans .leg-right {
+  left: 0.9em;
+  top: 3em;
+}
+.game .game-gallows .game-gallows-title {
+  position: relative;
+  top: -3em;
+}
+.game .game-gallows .game-gallows-title::before {
+  display: block;
+  content: "";
+  width: 9.5em;
+  height: 0.5em;
+  background-color: black;
+}
+.game .game-forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.game .game-forms .game-form {
+  font-size: 2em;
+  padding-top: 1em;
+}
+.game .game-forms .game-form .game-form-letters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5em;
+  list-style: none;
+}
+.game .game-forms .game-form .game-form-letters .game-form-letter {
+  font-size: 1.5em;
+  width: 1.5em;
+  border-bottom: 0.2em solid black;
+}
+.game .game-forms .game-form .game-form-letters .game-form-letter.right {
+  border: none;
+}
+.game .game-forms .game-form .game-form-hint, .game .game-forms .game-form .game-form-counter {
+  margin-left: 1em;
+}
+.game .game-forms .game-form .game-form-counter span {
+  color: rgb(81, 19, 197);
+}
+.game .game-forms .keyboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5em;
+  font-size: 1.5em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.game .game-forms .keyboard .letter {
+  background-color: aliceblue;
+  width: 2em;
+  height: 2em;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-box-shadow: 5px 5px 5px rgb(197, 93, 93);
+          box-shadow: 5px 5px 5px rgb(197, 93, 93);
+}
+.game .game-forms .keyboard .letter:hover {
+  cursor: pointer;
+  background-color: rgb(178, 212, 212);
+}
+.game .game-forms .keyboard .letter.right {
+  background-color: rgb(45, 110, 28);
+  opacity: 0.8;
+  pointer-events: none;
+}
+.game .game-forms .keyboard .letter.wrong {
+  background-color: rgb(201, 57, 81);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header .modal-win, .header .modal-lose {
+    left: 25%;
+    top: 2%;
+  }
+  .game {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.2em;
+  }
+  .game .game-gallows {
+    padding-left: 4em;
+  }
+  .game .game-forms .keyboard {
+    max-width: 22em;
+  }
+}
+@media screen and (max-width: 368px) {
+  .header .modal-win, .header .modal-lose {
+    left: 50%;
+    top: 8%;
+    width: 12em;
+  }
+  .header .modal-win img, .header .modal-lose img {
+    max-width: 3em;
+    height: 3em;
+  }
+  .game {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.2em;
+  }
+  .game .game-gallows {
+    padding-left: 4em;
+  }
+  .game .game-forms .game-form .game-form-letters .game-form-letter {
+    font-size: 1.5em;
+  }
+  .game .game-forms .game-form .game-form-hint, .game .game-forms .game-form .game-form-counter {
+    font-size: 2.5em;
+  }
+  .game .game-forms .keyboard {
+    max-width: 40em;
+  }
+  .game .game-forms .keyboard .letter {
+    width: 4.5em;
+    height: 4.5em;
+  }
+}
