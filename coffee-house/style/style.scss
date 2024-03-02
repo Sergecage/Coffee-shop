@@ -166,9 +166,9 @@ main{
                 }
             }
         }
-        video{
+        .enjoy-back{
             object-fit: cover;
-            z-index: -1;
+            z-index: -100;
             border-radius: 40px;
             position: absolute;
             width: 100%;
