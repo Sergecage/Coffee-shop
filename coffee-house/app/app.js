@@ -50,7 +50,7 @@ const selectItem = () => {
     document.body.style.overflow = "hidden";
     generateItem();
 }
- coffee-house-week3
+
 const addMoreCards = () => {
     for ( let i =0; i < selectedContent.children.length; i++) {
         selectedContent.children[i].style.display = 'block';
@@ -59,7 +59,7 @@ const addMoreCards = () => {
 };
 
 const changeCategory = () => {
-    if (event.target.classList.contains("btn-span")) {
+    if (event.target.classList.contains("btn-menu")) {
         const coffeeTab = event.target;
         if (!coffeeTab.classList.contains('active')) {
             const category = coffeeTab.dataset.category;
@@ -87,7 +87,6 @@ const uploadCards = (elem) => {
     }
 }
 
- coffee-house
 const createItem = (item) => {
     const itemCard = document.createElement('li');
     itemCard.className = "item";
