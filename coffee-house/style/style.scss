@@ -135,9 +135,10 @@ header{
 main{
     .enjoy{
         //background: url(../img/pictures/video.mp4);
-        background-size: 100%;
+        //background-size: 100%;
         border-radius: 40px;
         padding: 100px;
+        position: relative;
         .enjoy-text{
             margin: 0 2.2em 0 2.5em;
             flex-direction: column;
@@ -166,14 +167,15 @@ main{
                 }
             }
         }
-        video{
+        .enjoy-back{
             object-fit: cover;
-            z-index: -1;
+            z-index: -100;
             border-radius: 40px;
             position: absolute;
             width: 100%;
-            height: 65%;
-            top: 6em;
+            top: 0;
+            left: 1.5em;
+            height: 90%;
         }
     }
 }
@@ -1110,13 +1112,20 @@ footer{
             max-width: 348px;
             background-position: center;
             top: -1.8em;
-            h1{
-                font-size: 42px;
-                line-height: 115%;
-                max-width: 316px;
+            .enjoy-text{
+                margin: 0 0.5em;
+                h1{
+                    font-size: 42px;
+                    line-height: 115%;
+                    max-width: 316px;
+                }
+                .text{
+                    max-width: 316px;
+                }
             }
-            .text{
-                max-width: 316px;
+            .enjoy-back{
+                left: 0.5em;
+                height: 100%;
             }
         }
     }

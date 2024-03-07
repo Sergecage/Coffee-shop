@@ -59,7 +59,7 @@ const addMoreCards = () => {
 };
 
 const changeCategory = () => {
-    if (event.target.classList.contains("btn-menu")) {
+    if (event.target.classList.contains("btns-menu")) {
         const coffeeTab = event.target;
         if (!coffeeTab.classList.contains('active')) {
             const category = coffeeTab.dataset.category;
@@ -95,7 +95,7 @@ const createItem = (item) => {
     itmImg.className = "item-image";
     const itmImg2 = document.createElement("img");
     itmImg2.className = "item-img";
-    itmImg2.src = `../img/pictures/${item.category}-${item.id}.svg`;
+    itmImg2.src = `./img/pictures/${item.category}-${item.id}.svg`;
     itmImg2.alt= "coffee-drink";
     itmImg.append(itmImg2);
     const itmText = document.createElement("div");
@@ -134,7 +134,7 @@ const loadMoreCardBtn = () => {
 
 //generate content for modal
 const generateItem = () => {
-    itemImg.src = `../img/pictures/${currentItem.category}-${currentItem.id}.svg`;
+    itemImg.src = `./img/pictures/${currentItem.category}-${currentItem.id}.svg`;
     itemImg.alt = "coffee-drink";
     itemName.textContent = currentItem.name;
     itemText.textContent = currentItem.description;
