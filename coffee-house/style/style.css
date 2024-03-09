@@ -261,6 +261,8 @@ section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .c
   background-position: center;
   position: relative;
   top: -0.8em;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 }
 section .favorite-coffee .coffee-scroll .arrow-left:hover, section .favorite-coffee .coffee-scroll .arrow-right:hover {
   cursor: pointer;
@@ -275,13 +277,9 @@ section .favorite-coffee .coffee-scroll .drinks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 1152px;
-  min-width: 480px;
-  max-width: 1162px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -294,70 +292,90 @@ section .favorite-coffee .coffee-scroll .drinks ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 3em;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  position: relative;
+  overflow: hidden;
+  max-width: 480px;
 }
-section .favorite-coffee .coffee-scroll .drinks ul .drink-item:nth-child(n+2) {
-  display: none;
+section .favorite-coffee .coffee-scroll .drinks ul .drink-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  text-align: center;
 }
 section .favorite-coffee .coffee-scroll .drinks ul .drink-item img {
   width: 480px;
-  height: 480px;
+  margin: 0 0 20px 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-section .favorite-coffee .coffee-scroll .drinks .coffee-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+section .favorite-coffee .coffee-scroll .drinks ul .drink-item .h3-heading, section .favorite-coffee .coffee-scroll .drinks ul .drink-item .text {
+  margin: 0 0 16px 0;
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 480px;
-  text-align: center;
-  position: relative;
-  top: 0.5em;
-}
-section .favorite-coffee .coffee-scroll .drinks .coffee-text .h3-heading, section .favorite-coffee .coffee-scroll .drinks .coffee-text .text {
-  margin-bottom: 16px;
-}
-section .favorite-coffee .coffee-scroll .drinks .pag-btn {
-  position: relative;
-  top: 1.9em;
-  left: 0.1em;
-}
-section .favorite-coffee .coffee-scroll .drinks .pag-btn ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 16px;
+  width: 100%;
+  position: relative;
+  top: 22.5em;
+  left: -18.8em;
 }
-section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag {
+section .favorite-coffee .coffee-scroll .drinks .pag-btn .pag {
   width: 40px;
   height: 4px;
   border-radius: 100px;
   background: var(--border-light);
+  margin: 0 12px 0 0;
 }
-section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag.active {
+section .favorite-coffee .coffee-scroll .drinks .pag-btn .pag.active {
   background: var(--border-color);
+  -webkit-animation: fill-btn 5s linear;
+          animation: fill-btn 5s linear;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
-section .favorite-coffee .coffee-scroll .drinks .pag-btn ul .pag:hover {
+section .favorite-coffee .coffee-scroll .drinks .pag-btn .pag.active.pause {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn .pag:hover {
   cursor: pointer;
   background: var(--border-color);
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn .pag:last-child() {
+  margin: 0;
+}
+section .favorite-coffee .coffee-scroll .drinks .pag-btn .pag div {
+  width: 0;
+  height: 100%;
+  border-radius: 100px;
+}
+@-webkit-keyframes fill-btn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes fill-btn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 section .favorite-coffee .sub-heading-menu {
   position: relative;
