@@ -134,8 +134,7 @@ const loadMoreCardBtn = () => {
 
 //generate content for modal
 const generateItem = () => {
-    itemImg.src = `./img/pictures/${currentItem.category}-${currentItem.id}.svg`;
-    itemImg.alt = "coffee-drink";
+    itemImg.innerHTML = `<img src="./img/pictures/${currentItem.category}-${currentItem.id}.svg" alt = "coffee-drink""/>`;
     itemName.textContent = currentItem.name;
     itemText.textContent = currentItem.description;
     for (let i = 0; i < itemSizes.children.length; i++) {
@@ -159,7 +158,7 @@ const updateSize = (el) => {
         const size = targetSize.dataset.size;
         const addPrice = currentItem.sizes[size]["add-price"];
         sizePrice = addPrice;
-        itemPrice.textContent = `$${getFullPrice()}`;
+        itemPrice.textContent = `$${getPrice()}`;
     }
 }
 
@@ -168,7 +167,7 @@ itemSizes.addEventListener('click', updateSize);
 const updateAdditive = (el) => {
     const targetSize = el.target.closest(".item-size");
     if (targetSize) {
-        clickAdditive(targetSize);
+        clickBtn(targetSize);
         const add = targetSize.dataset.add;
         const addPrice = currentItem.additives[add]["add-price"];
         if (targetSize.classList.contains('active')){
@@ -192,9 +191,15 @@ const clickSizeBtn = (ele) => {
     ele.classList.add('active');
 }
 
-const clickAdditive = (ele) => {
+const clickBtn = (ele) => {
     if(ele) {
         ele.classList.toggle("active");
+    }
+}
+
+const unclickBtn = () => {
+    for (let i = 0; i < itemAdditive.children.length; i++) {
+        itemAdditive.children[i].classList.remove('active');
     }
 }
 
@@ -205,16 +210,22 @@ const getPrice = () => {
 }
 //close item card
 const closeItem = () => {
+    currentItem = null;
+    totalPrice = 0;
+    sizePrice = 0;
+    additivePrice =0;
+
     selectedItem.classList.remove('active');
     document.body.style.overflow = 'auto';
     document.body.style.background = "#E1D4C9";
+    unclickBtn();
 }
 
-const closeNearItem = (el) => {
+/*const closeNearItem = (el) => {
     if (!el.target.closest(".item")) {
         closeItem();
     }
-}
+}*/
 
 uploadCards("coffee");
 
