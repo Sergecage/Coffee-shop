@@ -14,6 +14,10 @@ const itemAdditive = document.querySelector(".additives .item-sizes");
 const itemPrice = document.querySelector(".price");
 const btnMenu = document.querySelector(".btn-menu");
 const loadMoreBtn = document.querySelector(".refresh");
+const leftBtn = document.querySelector(".arrow-left");
+const rightBtn = document.querySelector(".arrow-right");
+const coffeeSlider = document.querySelector(".coffee-slide");
+const pagBtn = document.querySelectorAll(".pag");
 const items = menuItems.map((item, id = 0) => {
     item.id = id++;
     return {...item}
@@ -233,4 +237,77 @@ closeBtn.addEventListener("click", closeItem);
 selectedItem.addEventListener("click", closeNearItem);
 loadMoreBtn.addEventListener('click', addMoreCards);
 
+//slider carousel
+let startingPosition = 1;
+const maxFill = coffeeSlider.children.length;
+let startFill;
+let endFill;
 
+const rightClick = () => {
+    if (startingPosition < maxFill) {
+        coffeeSlider.style.left = `-${100 * startingPosition}%`;
+        startingPosition++;
+    } else {
+        coffeeSlider.style.left = `0`;
+        startingPosition = 1;
+    }
+    activateBtn();
+}
+
+const leftClick = () => {
+    if (startingPosition > 1) {
+        coffeeSlider.style.left = `-${-(100 * (startingPosition -1 )) + 100}%`;
+        startingPosition--;
+    } else {
+        coffeeSlider.style.left = `-${(startingPosition - 1) * 100}`;
+        startingPosition = maxFill;
+    }
+    activateBtn();
+}
+
+const activateBtn = () => {
+    for (let i = 0; i < coffeeSlider.length; i++) {
+        coffeeSlider[i].classList.remove('active');
+    }
+    const positionIndex = startingPosition - 1;
+    coffeeSlider[positionIndex].classList.add('active');
+}
+
+const startSlider = () => {
+    for (let i = 0; i < coffeeSlider.length; i++) {
+        if (coffeeSlider[i].classList.contains('pause')) {
+            coffeeSlider[i].classList.remove('pause');
+        }
+    }
+}
+
+const stopSlider = () => {
+    for (let i = 0; i < coffeeSlider.length; i++) {
+        if (coffeeSlider[i].classList.contains('active')) {
+            coffeeSlider[i].classList.add('pause');
+        }
+    }
+}
+rightBtn.addEventListener('click', rightClick);
+leftBtn.addEventListener('click', leftClick);
+
+for (let i = 0; i < coffeeSlider.length; i++) {
+    coffeeSlider[i].addEventListener('animationed', rightClick);
+}
+
+document.addEventListener('touchstart', sliderCarousel(elem){
+    elem.stopPropagation();
+    stopSlider();
+    startFill = elem.changedTouches[0];
+}, false);
+
+document.addEventListener('touchstart', function(elem){
+    elem.stopPropagation();
+    startSlider();
+    endFill = elem.changedTouches[0];
+    let xPoint = Math.abs(startFill.pageX - endFill.pageX) {
+        rightClick();
+    } else {
+        leftClick();
+    }
+}, false);
