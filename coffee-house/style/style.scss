@@ -218,6 +218,7 @@ section{
                 background-position: center;
                 position: relative;
                 top: -0.8em;
+                transition: all ease 0.5s;
                 &:hover{
                         cursor: pointer;
                         background-color: var(--border-color);
@@ -229,61 +230,71 @@ section{
             }
             .drinks{
                 display: flex;
-                width: 1152px;
-                min-width: 480px;
-                max-width: 1162px;
-                flex-direction: column;
+                justify-content: space-between;
                 align-items: center;
                 ul{
                     display: flex;
                     flex-direction: row;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
-                    gap: 3em;
+                    transition: all ease 0.5s;
+                    position: relative;
+                    overflow: hidden;
+                    max-width: 480px;
                     .drink-item{
-                        &:nth-child(n+2){
-                            display: none;
-                        }
+                        flex:  0 0 100%;
+                        text-align: center;
                         img{
                             width: 480px;
-                            height: 480px;
+                            margin: 0 0 20px 0;
+                            object-fit: cover;
+                        }
+                        .h3-heading, .text{
+                            margin: 0 0 16px 0;
                         }
                     }
                 }
-                .coffee-text{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    max-width: 480px;
-                    text-align: center;
-                    position: relative;
-                    top: 0.5em;
-                    .h3-heading, .text{
-                        margin-bottom: 16px;
-                    }
-            }
             .pag-btn{
+                justify-content: center;
+                display: flex;
+                width: 100%;
                 position: relative;
-                top: 1.9em;
-                left: 0.1em;
-                ul{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 16px;
+                top: 22.5em;
+                left: -18.8em;
                     .pag{
                         width: 40px;
                         height: 4px;
                         border-radius: 100px;
                         background: var(--border-light);
+                        margin: 0 12px 0 0;
                         &.active{
                             background: var(--border-color);
+                            animation: fill-btn 5s linear;
+                            animation-play-state: running;
+                            &.pause{
+                                animation-play-state: paused;
+                            }
                         }
                         &:hover{
                             cursor: pointer;
                             background: var(--border-color);
                         }
+                        &:last-child(){
+                            margin: 0;
+                        }
                     }
+                    .pag div{
+                        width: 0;
+                        height: 100%;
+                        border-radius: 100px;
+                    }
+            }
+            @keyframes fill-btn {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
                 }
             }
         }
