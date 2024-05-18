@@ -199,12 +199,9 @@ section{
         }
         .coffee-scroll{
             display: flex;
-            max-width: 1360px;
-            position: relative;
-            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            gap: 40px;
-            left: 2.3em;
+            margin: 0 0 100px 0;
             .arrow-left, .arrow-right{
                 display: flex;
                 width: 60px;
@@ -230,9 +227,8 @@ section{
             }
             .drinks{
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
-                ul{
+                .coffee-slide{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
@@ -240,12 +236,12 @@ section{
                     transition: all ease 0.5s;
                     position: relative;
                     overflow: hidden;
-                    max-width: 480px;
                     .drink-item{
+                        width: 12em;
                         flex:  0 0 100%;
                         text-align: center;
+                        justify-content: center;
                         img{
-                            width: 480px;
                             margin: 0 0 20px 0;
                             object-fit: cover;
                         }
@@ -257,7 +253,7 @@ section{
             .pag-btn{
                 justify-content: center;
                 display: flex;
-                width: 100%;
+                width: 20%;
                 position: relative;
                 top: 22.5em;
                 left: -18.8em;
@@ -853,13 +849,16 @@ footer{
 }
 
 @media  screen and (max-width: 768px) {
+    .body-container{
+        width: 768px;
+    }
     header{
         .burger-menu{
             display: block;
             position: relative;
             width: 44px;
             height: 44px;
-            left: 47.5%;
+            left: 85%;
             top: -3.4em;
             cursor: pointer;
             border-radius: 50%;
@@ -966,14 +965,13 @@ footer{
                 left: 0;
             }
             .coffee-scroll{
-                left: -18.2em;
                 .arrow-left, .arrow-right{
                     &:hover{
                         background-color: transparent;
                     }
                 }
                 .drinks{
-                    width: 480px;
+                    width: 540px;
                 }
             }
             .sub-heading-menu{
@@ -1019,7 +1017,6 @@ footer{
                         background-repeat: no-repeat;
                         position: relative;
                         left: 0;
-                        width: 50%;
                     }
                     li{
                         &:hover{
@@ -1035,7 +1032,6 @@ footer{
                         background-repeat: no-repeat;
                         position: relative;
                         left: 0;
-                        width: 50%;
                     }
                     .item1{
                         display: none;
@@ -1105,12 +1101,12 @@ footer{
 }
 
 @media  screen and (max-width: 380px) {
+    .body-container{
+        width: 390px;
+    }
     header{
         .logo-container{
             margin: 1.2em 0 0 1em;
-        }
-        .burger-menu{
-            left: 22%;
         }
         .header-menu{
             width: 348px;
@@ -1152,13 +1148,13 @@ footer{
             padding: 0 1em;
             margin-top: 75px;
             .coffee-scroll{
+                justify-content: center;
                 .arrow-left, .arrow-right{
                     display: none;
                 }
                 .drinks{
                     max-width: 348px;
                     position: relative;
-                    left: -12em;
                     ul{
                         .drink-item{
                             img{
@@ -1166,6 +1162,9 @@ footer{
                                 height: 348px;
                             }
                         }
+                    }
+                    .pag-btn{
+                        left: -50%;
                     }
                 }
             }
@@ -1209,14 +1208,13 @@ footer{
                 .col-1{
                     .item1{
                         position: relative;
-                        width: 25%;
+                        
                         left: 0;
                     }
                 }
                 .col-2{
                     .item2{
                         position: relative;
-                        width: 25%;
                         left: 0;
                     }
                 }
