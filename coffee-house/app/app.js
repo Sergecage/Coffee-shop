@@ -225,11 +225,6 @@ const closeItem = () => {
     unclickBtn();
 }
 
-/*const closeNearItem = (el) => {
-    if (!el.target.closest(".item")) {
-        closeItem();
-    }
-}*/
 
 uploadCards("coffee");
 
@@ -295,7 +290,7 @@ for (let i = 0; i < coffeeSlider.length; i++) {
     coffeeSlider[i].addEventListener('animationed', rightClick);
 }
 
-document.addEventListener('touchstart', sliderCarousel(elem){
+/*document.addEventListener('touchstart', sliderCarousel(elem) {
     elem.stopPropagation();
     stopSlider();
     startFill = elem.changedTouches[0];
@@ -310,4 +305,4 @@ document.addEventListener('touchstart', function(elem){
     } else {
         leftClick();
     }
-}, false);
+}, false);*/

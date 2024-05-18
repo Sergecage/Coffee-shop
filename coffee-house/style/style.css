@@ -230,17 +230,13 @@ section .favorite-coffee .coffee-scroll {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1360px;
-  position: relative;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 40px;
-  left: 2.3em;
+  margin: 0 0 100px 0;
 }
 section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .coffee-scroll .arrow-right {
   display: -webkit-box;
@@ -277,14 +273,11 @@ section .favorite-coffee .coffee-scroll .drinks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-section .favorite-coffee .coffee-scroll .drinks ul {
+section .favorite-coffee .coffee-scroll .drinks .coffee-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,21 +295,23 @@ section .favorite-coffee .coffee-scroll .drinks ul {
   transition: all ease 0.5s;
   position: relative;
   overflow: hidden;
-  max-width: 480px;
 }
-section .favorite-coffee .coffee-scroll .drinks ul .drink-item {
+section .favorite-coffee .coffee-scroll .drinks .coffee-slide .drink-item {
+  width: 12em;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-section .favorite-coffee .coffee-scroll .drinks ul .drink-item img {
-  width: 480px;
+section .favorite-coffee .coffee-scroll .drinks .coffee-slide .drink-item img {
   margin: 0 0 20px 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
-section .favorite-coffee .coffee-scroll .drinks ul .drink-item .h3-heading, section .favorite-coffee .coffee-scroll .drinks ul .drink-item .text {
+section .favorite-coffee .coffee-scroll .drinks .coffee-slide .drink-item .h3-heading, section .favorite-coffee .coffee-scroll .drinks .coffee-slide .drink-item .text {
   margin: 0 0 16px 0;
 }
 section .favorite-coffee .coffee-scroll .drinks .pag-btn {
@@ -326,7 +321,7 @@ section .favorite-coffee .coffee-scroll .drinks .pag-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 20%;
   position: relative;
   top: 22.5em;
   left: -18.8em;
@@ -1082,12 +1077,15 @@ footer .footer-grid-menu {
 }
 
 @media screen and (max-width: 768px) {
+  .body-container {
+    width: 768px;
+  }
   header .burger-menu {
     display: block;
     position: relative;
     width: 44px;
     height: 44px;
-    left: 47.5%;
+    left: 85%;
     top: -3.4em;
     cursor: pointer;
     border-radius: 50%;
@@ -1194,14 +1192,11 @@ footer .footer-grid-menu {
   section .favorite-coffee .sub-heading {
     left: 0;
   }
-  section .favorite-coffee .coffee-scroll {
-    left: -18.2em;
-  }
   section .favorite-coffee .coffee-scroll .arrow-left:hover, section .favorite-coffee .coffee-scroll .arrow-right:hover {
     background-color: transparent;
   }
   section .favorite-coffee .coffee-scroll .drinks {
-    width: 480px;
+    width: 540px;
   }
   section .favorite-coffee .sub-heading-menu {
     left: 0;
@@ -1247,7 +1242,6 @@ footer .footer-grid-menu {
     background-repeat: no-repeat;
     position: relative;
     left: 0;
-    width: 50%;
   }
   section .about .img-grid .col-1 li:hover {
     -webkit-transform: scale(100%);
@@ -1260,7 +1254,6 @@ footer .footer-grid-menu {
     background-repeat: no-repeat;
     position: relative;
     left: 0;
-    width: 50%;
   }
   section .about .img-grid .col-2 .item1 {
     display: none;
@@ -1335,11 +1328,11 @@ footer .footer-grid-menu {
   }
 }
 @media screen and (max-width: 380px) {
+  .body-container {
+    width: 390px;
+  }
   header .logo-container {
     margin: 1.2em 0 0 1em;
-  }
-  header .burger-menu {
-    left: 22%;
   }
   header .header-menu {
     width: 348px;
@@ -1377,17 +1370,24 @@ footer .footer-grid-menu {
     padding: 0 1em;
     margin-top: 75px;
   }
+  section .favorite-coffee .coffee-scroll {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   section .favorite-coffee .coffee-scroll .arrow-left, section .favorite-coffee .coffee-scroll .arrow-right {
     display: none;
   }
   section .favorite-coffee .coffee-scroll .drinks {
     max-width: 348px;
     position: relative;
-    left: -12em;
   }
   section .favorite-coffee .coffee-scroll .drinks ul .drink-item img {
     width: 348px;
     height: 348px;
+  }
+  section .favorite-coffee .coffee-scroll .drinks .pag-btn {
+    left: -50%;
   }
   section .favorite-coffee .coffee-text {
     width: 348px;
@@ -1428,12 +1428,10 @@ footer .footer-grid-menu {
   }
   section .about .img-grid .col-1 .item1 {
     position: relative;
-    width: 25%;
     left: 0;
   }
   section .about .img-grid .col-2 .item2 {
     position: relative;
-    width: 25%;
     left: 0;
   }
   section .mobile-app {
