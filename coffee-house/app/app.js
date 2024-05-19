@@ -18,6 +18,7 @@ const leftBtn = document.querySelector(".arrow-left");
 const rightBtn = document.querySelector(".arrow-right");
 const coffeeSlider = document.querySelector(".coffee-slide");
 const pagBtn = document.querySelectorAll(".pag");
+const favCoffee = document.querySelector(".favorite-cofee");
 const items = menuItems.map((item, id = 0) => {
     item.id = id++;
     return {...item}
@@ -35,6 +36,7 @@ const activeBurger = () => {
     navMenu.classList.toggle('active');
     enjoySection.classList.toggle('active');
     menuSection.classList.toggle('active');
+    favCoffee.classList.toggle("active");
 }
 menuButton.addEventListener("click", activeBurger);
 

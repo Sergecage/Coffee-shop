@@ -98,8 +98,16 @@ a:hover {
 }
 
 .body-container {
-  width: 1440px;
-  margin: auto;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header .logo-container {
@@ -1231,6 +1239,9 @@ footer .footer-grid-menu {
   section .favorite-coffee.menu.active {
     top: 35em;
   }
+  section .favorite-coffee.active {
+    margin-top: 32em;
+  }
   section .about .sub-heading {
     text-align: left;
   }
@@ -1327,15 +1338,13 @@ footer .footer-grid-menu {
     top: 2.2em;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 630px) {
   .body-container {
-    width: 390px;
+    max-width: 430px;
+    padding: 0 16px;
   }
-  header .logo-container {
-    margin: 1.2em 0 0 1em;
-  }
-  header .header-menu {
-    width: 348px;
+  header .header-menu.active {
+    width: 400px;
   }
   main .enjoy {
     padding: 60px 16px;
@@ -1355,7 +1364,41 @@ footer .footer-grid-menu {
   main .enjoy .enjoy-text .text {
     max-width: 316px;
   }
-  main .enjoy .enjoy-back {
+  section .mobile-app {
+    margin: 0;
+  }
+  section .mobile-app .mobile-text {
+    max-width: 400px;
+  }
+  section .mobile-app .mobile-img img {
+    max-width: 400px;
+  }
+  footer {
+    width: 400px;
+  }
+  footer .footer-grid {
+    width: 400px;
+  }
+  footer .footer-icons .sub-heading {
+    max-width: 316px;
+    font-size: 32px;
+  }
+  footer .footer-contacts {
+    top: -1.2em;
+  }
+}
+@media screen and (max-width: 390px) {
+  .body-container {
+    max-width: 380px;
+    padding: 0 16px;
+  }
+  header .logo-container {
+    margin: 1.2em 0 0 1em;
+  }
+  header .header-menu {
+    width: 348px;
+  }
+  main .enjoy-back {
     left: 0.5em;
     height: 100%;
   }
