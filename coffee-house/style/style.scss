@@ -91,8 +91,11 @@ a{
 }
 
 .body-container{
-    width: 1440px;
-    margin: auto;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -1005,6 +1008,9 @@ footer{
                     top: 35em;
                 }
             }
+            &.active{
+                margin-top: 32em;
+            }
         }
         .about{
             .sub-heading{
@@ -1099,10 +1105,72 @@ footer{
         }
     }
 }
-
-@media  screen and (max-width: 380px) {
+@media  screen and (max-width: 630px) {
     .body-container{
-        width: 390px;
+        max-width: 430px;
+        padding: 0 16px;
+    }
+    header{
+            .header-menu {
+                &.active{
+                    width: 400px;
+                }
+            }
+        }
+        main{
+            .enjoy{
+                padding: 60px 16px;
+                margin: 0 1em;
+                max-width: 348px;
+                background-position: center;
+                top: -1.8em;
+                .enjoy-text{
+                    margin: 0 0.5em;
+                    h1{
+                        font-size: 42px;
+                        line-height: 115%;
+                        max-width: 316px;
+                    }
+                    .text{
+                        max-width: 316px;
+                    }
+                }
+        }
+    }
+    section{
+        .mobile-app{
+            margin: 0;
+            .mobile-text{
+                max-width: 400px;
+            }
+            .mobile-img{
+                img{
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+    footer{
+        width: 400px;
+        .footer-grid{
+            width: 400px;
+        }
+        .footer-icons{
+            .sub-heading{
+                max-width: 316px;
+                font-size: 32px;
+            }
+        }
+        .footer-contacts{
+            top: -1.2em;
+        }
+    }
+}
+
+@media  screen and (max-width: 390px) {
+    .body-container{
+        max-width: 380px;
+        padding: 0 16px;
     }
     header{
         .logo-container{
@@ -1113,29 +1181,11 @@ footer{
         }
     }
     main{
-        .enjoy{
-            padding: 60px 16px;
-            margin: 0 1em;
-            max-width: 348px;
-            background-position: center;
-            top: -1.8em;
-            .enjoy-text{
-                margin: 0 0.5em;
-                h1{
-                    font-size: 42px;
-                    line-height: 115%;
-                    max-width: 316px;
-                }
-                .text{
-                    max-width: 316px;
-                }
-            }
-            .enjoy-back{
+        .enjoy-back{
                 left: 0.5em;
                 height: 100%;
             }
         }
-    }
     section{
         .sub-heading{
             max-width: 348px;
